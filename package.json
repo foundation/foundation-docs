@@ -1,0 +1,31 @@
+{
+  "name": "foundation-docs",
+  "version": "0.1.0",
+  "description": "Common templates and utilities for the Foundation family documentation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zurb/foundation-docs.git"
+  },
+  "keywords": [
+    "foundation",
+    "docs"
+  ],
+  "author": "ZURB <foundation@zurb.com> (http://foundation.zurb.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zurb/foundation-docs/issues"
+  },
+  "homepage": "https://github.com/zurb/foundation-docs#readme",
+  "devDependencies": {
+    "handlebars": "^4.0.5",
+    "highlight.js": "^9.0.0",
+    "marked": "^0.3.5",
+    "multiline": "^1.0.2",
+    "querystring": "^0.2.0",
+    "string-template": "^0.2.1"
+  }
+}
