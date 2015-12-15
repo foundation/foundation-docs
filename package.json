@@ -20,7 +20,7 @@
     "url": "https://github.com/zurb/foundation-docs/issues"
   },
   "homepage": "https://github.com/zurb/foundation-docs#readme",
-  "devDependencies": {
+  "dependencies": {
     "handlebars": "^4.0.5",
     "highlight.js": "^9.0.0",
     "marked": "^0.3.5",
