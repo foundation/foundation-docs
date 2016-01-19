@@ -23,11 +23,17 @@
   ul:first-child { float: left; }
   ul:last-child  { float: right; }
 }
+
 .sticky-mag {
   background-color: white;
+
   &.stuck-mag {
     border-bottom: 2px solid #121212;
   }
+}
+
+.expanded.row .row {
+  @include grid-row-nest;
 }
 
 // .docs-component {
