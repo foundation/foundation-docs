@@ -49,7 +49,7 @@
 
 [id^="docs-flex"].docs-component .docs-code-live {
   @include foundation-flex-grid;
-  
+
   .row {
     background: #f9f9f9;
     font-size: 11px;
@@ -134,4 +134,12 @@ body > .off-canvas {
   #series-example-3 {
     @include mui-queue(0.5s, 0s, fade, hinge(in, bottom));
   }
+}
+
+// Top Bar
+// - - - - - - - - - - - - - - -
+.docs-code-live .top-bar-title strong {
+  margin-top: 7px;
+  display: inline-block;
+  margin-left: 8px;
 }
