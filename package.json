@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/zurb/foundation-docs#readme",
   "dependencies": {
+    "escape-html": "^1.0.3",
     "handlebars": "^3.0.1",
     "highlight.js": "^9.0.0",
     "marked": "^0.3.5",
