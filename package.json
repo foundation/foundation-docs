@@ -24,6 +24,7 @@
     "escape-html": "^1.0.3",
     "handlebars": "^3.0.1",
     "highlight.js": "^9.0.0",
+    "inky": "^1.0.0-rc.1",
     "marked": "^0.3.5",
     "multiline": "^1.0.2",
     "querystring": "^0.2.0",
