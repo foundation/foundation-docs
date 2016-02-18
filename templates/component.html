@@ -194,7 +194,7 @@
 
     {{md this.description}}
 
-    <div class="docs-code"><pre><code>var elem = new Foundation.{{this.name}}(element, options);</code></pre></div>
+    <div class="docs-code"><pre><code>{{writeJsConstructor this.name}}</code></pre></div>
 
     {{#if this.fires}}
       <p><strong>Fires these events:</strong>
@@ -235,8 +235,8 @@
       </thead>
       {{#each js.member}}
       <tr>
-        <td>{{this.name}}</td>
-        <td><code>{{this.examples}}</code></td>
+        <td><code>{{jsOptionName this.name}}</code></td>
+        <td><code>{{jsOptionValue this.examples}}</code></td>
         <td>{{this.description}}</td>
       </tr>
       {{/each}}
@@ -258,7 +258,7 @@
       </thead>
       {{#each js.event}}
         <tr>
-          <td>{{jsEventName this.name ../title}}</td>
+          <td><code>{{jsEventName this.name ../title}}</code></td>
           <td>{{this.description}}</td>
         </tr>
       {{/each}}
