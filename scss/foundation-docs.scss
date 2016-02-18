@@ -36,6 +36,17 @@
   @include grid-row-nest;
 }
 
+.docs-contribute-menu {
+  @include breakpoint(small only) {
+    font-size: rem-calc(14);
+  }
+
+  i {
+    margin-right: 8px !important;
+    margin-top: -1px;
+  }
+}
+
 // .docs-component {
 //   .callout {
 //     border-left-width: 10px;
