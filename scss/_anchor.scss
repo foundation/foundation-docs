@@ -2,17 +2,15 @@
 
 // The heading itself needs position: relative to make the positioning work
 .docs-heading {
-  position: relative;
+  // position: relative;
 }
 
 .docs-heading-icon {
-  display: none;
-  position: absolute;
-  right: 100%;
-  width: 2rem;
-  font-size: 2rem;
-  top: 0.4rem;
-  margin-right: -0.1rem;
+  visibility: hidden;
+  font-size: 1.8rem;
+  margin-left: 0.6rem;
+  position: relative;
+  top: 1px;
 
   // Link icon
   &::before {
@@ -24,19 +22,16 @@
   // When the title or the icon itself is hovered on, display the icon
   &:hover,
   .docs-heading:hover & {
-    display: block;
+    visibility: visible;
   }
 
   // Adjust the icon's size and position for smaller headings
   h3 > & {
     font-size: 1.6rem;
-    top: 0.25rem;
-    margin-right: -0.3rem;
+    top: 2px;
   }
 
   h4 > & {
     font-size: 1.6rem;
-    top: 0.25rem;
-    margin-right: -0.3rem;
   }
 }
