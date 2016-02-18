@@ -231,13 +231,13 @@
 
     <table class="docs-variable-table">
       <thead>
-        <tr><th>Name</th><th>Description</th><th>Example</th></tr>
+        <tr><th>Name</th><th>Default</th><th>Description</th></tr>
       </thead>
       {{#each js.member}}
       <tr>
         <td>{{this.name}}</td>
-        <td>{{this.description}}</td>
         <td><code>{{this.examples}}</code></td>
+        <td>{{this.description}}</td>
       </tr>
       {{/each}}
     </table>
@@ -270,11 +270,15 @@
 
   {{#if js.function}}
   <section>
-    {{#heading 3 'js-functions'}}Functions{{/heading}}
+    {{#heading 3 'js-functions'}}Methods{{/heading}}
 
     {{#each js.function}}
     <section>
-      {{#heading 4 this.name}}{{../../js.class.0.name}}.{{this.name}}{{/heading}}
+      {{#heading 4 this.name}}{{this.name}}{{/heading}}
+
+      <div class="docs-code">
+        <pre><code>{{ writeJsFunction this }}</code></pre>
+      </div>
 
       {{md this.description}}
 
