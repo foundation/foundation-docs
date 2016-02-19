@@ -1,0 +1,141 @@
+<section>
+  {{#heading 2}}JavaScript Reference{{/heading}}
+
+  {{#if js.module}}{{#with js.module.[0]}}
+  <section>
+    {{#heading 3 'js-module'}}Initializing{{/heading}}
+
+    <p>The file <code>{{meta.filename}}</code> must be included in your JavaScript to use this plugin, along with <code>foundation.core.js</code>.{{#if requires}} <strong>This plugin also requires these utility libraries:</strong>{{/if}}</p>
+
+    {{#if requires}}{{#each requires}}
+    <ul>
+      <li><code>{{formatJsModule this}}</code></li>
+    </ul>
+    {{/each}}{{/if}}
+
+  </section>
+  {{/with}}{{/if}}
+
+  {{#each js.class}}
+  <section>
+    {{#heading 3 'js-class'}}Foundation.{{this.name}}{{/heading}}
+
+    {{md this.description}}
+
+    <div class="docs-code"><pre><code>{{writeJsConstructor this.name}}</code></pre></div>
+
+    {{#if this.fires}}
+      <p><strong>Fires these events:</strong>
+      {{#each this.fires}}
+        {{this}}
+      {{/each}}
+      </p>
+    {{/if}}
+
+    {{#if this.params}}
+    <table class="docs-variable-table">
+      <thead>
+        <tr><th>Name</th><th>Type</th><th>Description</th></tr>
+      </thead>
+      {{#each this.params}}
+      <tr>
+        <td><code>{{this.name}}</code></td>
+        <td>{{this.type.names.[0]}}</td>
+        <td>{{this.description}}</td>
+      </tr>
+      {{/each}}
+    </table>
+    {{/if}}
+  </section>
+  {{/each}}
+
+  <hr>
+
+  {{#if js.member}}
+  <section>
+    {{#heading 3 'js-options'}}Plugin Options{{/heading}}
+
+    <p>Use these options to customize an instance of {{title}}. Plugin options can be set as individual data attributes, one combined <code>data-options</code> attribute, or as an object passed to the plugin's constructor. <a href="javascript.html#initializing">Learn more about how JavaScript plugins are initialized.</a></p>
+
+    <table class="docs-variable-table">
+      <thead>
+        <tr><th>Name</th><th>Default</th><th>Description</th></tr>
+      </thead>
+      {{#each js.member}}
+      <tr>
+        <td><code>{{formatJsOptionName this.name}}</code></td>
+        <td><code>{{formatJsOptionValue this.examples}}</code></td>
+        <td>{{this.description}}</td>
+      </tr>
+      {{/each}}
+    </table>
+  </section>
+  {{/if}}
+
+  <hr>
+
+  {{#if js.event}}
+  <section>
+    {{#heading 3 'js-events'}}Events{{/heading}}
+
+    <p>These events will fire from any element with a {{title}} plugin attached.</p>
+
+    <table class="docs-variable-table">
+      <thead>
+        <tr><th>Name</th><th>Description</th></tr>
+      </thead>
+      {{#each js.event}}
+        <tr>
+          <td><code>{{formatJsEventName this.name ../title}}</code></td>
+          <td>{{this.description}}</td>
+        </tr>
+      {{/each}}
+    </table>
+  </section>
+  {{/if}}
+
+  <hr>
+
+  {{#if js.function}}
+  <section>
+    {{#heading 3 'js-functions'}}Methods{{/heading}}
+
+    {{#each js.function}}
+    <section>
+      {{#heading 4 this.name}}{{this.name}}{{/heading}}
+
+      <div class="docs-code">
+        <pre><code>{{ writeJsFunction this }}</code></pre>
+      </div>
+
+      {{md this.description}}
+
+      {{#if this.fires}}
+        <p><strong>Fires these events:</strong>
+        {{#each this.fires}}
+          {{this}}
+        {{/each}}
+        </p>
+      {{/if}}
+
+      {{#if this.params}}
+      <table class="docs-variable-table">
+        <thead>
+          <tr><th>Name</th><th>Type</th><th>Description</th></tr>
+        </thead>
+        {{#each this.params}}
+        <tr>
+          <td><code>{{this.name}}</code></td>
+          <td>{{this.type.names.[0]}}</td>
+          <td>{{this.description}}</td>
+        </tr>
+        {{/each}}
+      </table>
+      {{/if}}
+
+      {{#unless @last}}<hr>{{/unless}}
+    </section>
+    {{/each}}
+  </section>
+  {{/if}}
+</section>

@@ -1,0 +1,24 @@
+<header>
+  <h1 class="docs-page-title">{{ title }}</h1>
+
+  {{#if js}}
+    <span data-tooltip title="Requires a JavaScript library." class="docs-js label">JavaScript</span>
+  {{/if}}
+  {{#if mui}}
+    <span data-tooltip title="Supports Motion UI transitions." class="docs-mui label">Motion UI</span>
+  {{/if}}
+  {{#if library}}
+    <span data-tooltip title="This is an external library." class="docs-lib label"><a href="{{ library.github }}" target="_blank">Library</a></span>
+  {{/if}}
+  {{#if flexbox}}
+    <span data-tooltip title="Supports flexbox mode." class="docs-flex label"><a href="flexbox.html">Flexbox</a></span>
+  {{/if}}
+
+  <p class="lead docs-page-lead">{{ description }}</p>
+
+  <ul class="menu simple docs-contribute-menu">
+    <li><a href="{{ editLink fileName }}" target="_blank"><i class="fi-pencil"></i>Edit this Page</a></li>
+    <li><a href="{{#if library}}{{ library.github }}/issues{{else}}{{ issueLink title }}{{/if}}" target="_blank"><i class="fi-social-github"></i>Report a Bug</a></li>
+    <li><a href="http://foundation.zurb.com/forum" target="_blank"><i class="fi-comment"></i>Get Help</a></li>
+  </ul>
+</header>
