@@ -1,3 +1,5 @@
+// [TODO] Make class names more docs-specific
+
 $topbar-background: #121212;
 $topbar-hover-color: darken($topbar-background, 20%);
 
@@ -122,50 +124,3 @@ $topbar-hover-color: darken($topbar-background, 20%);
     color: $light-gray;
   }
 }
-
-// .docs-topbar {
-//   background: #333;
-//   font-size: rem-calc(13);
-//   font-weight: bold;
-
-//   .menu a {
-//     height: 45px;
-//     line-height: 45px;
-//     color: white;
-//     padding-top: 0;
-//     padding-bottom: 0;
-
-//     &:hover,
-//     &:focus {
-//       background: #222;
-//     }
-//   }
-
-//   .is-active a {
-//     background: #222;
-//   }
-
-//   // ZURB logo
-//   .menu img {
-//     position: relative;
-//     top: -2px;
-//   }
-
-//   .menu:first-child {
-//     border-right: 1px solid #4e4e4e;
-//   }
-
-//   .menu:last-child {
-//     border-left: 1px solid #4e4e4e;
-//   }
-
-//   .menu {
-//     li:not(:last-child) {
-//       border-right: 1px solid #4e4e4e;
-//     }
-//   }
-
-//   .docs-menu-title {
-//     margin: 0;
-//   }
-// }

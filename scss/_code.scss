@@ -1,6 +1,7 @@
 // Styles for code examples are here.
 
-.docs-code, pre {
+.docs-code,
+pre {
   position: relative;
 
   code {
@@ -206,20 +207,25 @@
 .hljs-at_rule {
   color: #333;
 }
+
 .hljs-at_rule .hljs-keyword {
   color: #a71d5d;
   font-weight: normal;
 }
+
 .hljs-at_rule .hljs-preprocessor {
   color: #0086b3;
   font-weight: normal;
 }
+
 .scss .hljs-attribute {
   color: #008080;
 }
+
 .scss .hljs-function {
   color: #008080;
 }
+
 .scss .hljs-class {
   color: #795da3;
 }

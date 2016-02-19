@@ -1,6 +1,6 @@
 // Component navigation menu seen on every page.
 
-.docs-menu.menu {
+.docs-nav.menu {
   margin-top: 0.5rem;
   background: #fafafa;
   padding-top: 1rem;
@@ -16,7 +16,7 @@
   }
 
   a {
-    font-size: .85rem;
+    font-size: 0.85rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 
@@ -38,7 +38,7 @@
   }
 }
 
-.docs-menu-title {
+.docs-nav-title {
   text-transform: uppercase;
   font-size: 0.75rem;
   color: #999;
@@ -51,7 +51,7 @@
   padding-top: 1.5rem;
 }
 
-.docs-version-number {
+.docs-nav-version {
   padding-left: 0.9rem;
   font-weight: bold;
   font-size: 0.75rem;
@@ -64,42 +64,5 @@
     &:hover {
       background: transparent;
     }
-  }
-}
-
-.docs-menu-ph {
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-.docs-sub-menu {
-  font-size: 0.85rem;
-  margin-top: 1rem;
-}
-
-// .docs-toc-wrap.is-stuck {
-//   max-height: calc(100vh - 1rem);
-//   overflow-y: auto;
-// }
-
-.docs-toc {
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid $medium-gray;
-
-  @include breakpoint(large) {
-    display: block !important;
-    border-bottom: 0;
-  }
-
-  .active {
-    background: $primary-color;
-    color: white;
-  }
-
-  .docs-sub-menu:first-child .docs-menu-title {
-    margin-top: 0;
-    border-top: 0;
-    padding-top: 0;
   }
 }

@@ -1,5 +1,4 @@
 @import 'typography';
-@import 'header';
 @import 'footer';
 @import 'navigation';
 @import 'newsletter';
@@ -15,7 +14,9 @@
 @import 'compatibility';
 @import 'notices';
 @import 'topbar';
+@import 'toc';
 @import 'banner';
+@import 'label';
 
 .menu-group {
   @include clearfix;
