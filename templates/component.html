@@ -54,8 +54,8 @@
       {{#each sass.variable}}
       <tr>
         <td class="name"><code>${{this.context.name}}</code></td>
-        <td>{{sassTypes this.type}}</td>
-        <td class="{{toLower this.type}}"><code>{{sassValue this.context.value}}</code></td>
+        <td>{{formatSassTypes this.type}}</td>
+        <td class="{{toLower this.type}}"><code>{{formatSassValue this.context.value}}</code></td>
         <td>{{md this.description}}</td>
       </tr>
       {{/each}}
@@ -84,7 +84,7 @@
       {{/if}}
 
       <div class="docs-code">
-        <pre><code>{{writeMixin this}}</code></pre>
+        <pre><code>{{writeSassMixin this}}</code></pre>
       </div>
 
       {{md this.description}}
@@ -93,7 +93,7 @@
         <p><strong>Aliases:</strong> {{#each this.aliased}}<code>{{this}}()</code>{{/each}}</p>
       {{/if}}
 
-      {{externalLink this.link}}
+      {{writeSassLink this.link}}
 
       {{#if this.parameter}}
       <table class="docs-variable-table">
@@ -103,8 +103,8 @@
         {{#each this.parameter}}
         <tr>
           <td><code>${{this.name}}</code></td>
-          <td>{{sassTypes this.type}}</td>
-          <td><code>{{sassValue this.default}}</code></td>
+          <td>{{formatSassTypes this.type}}</td>
+          <td><code>{{formatSassValue this.default}}</code></td>
           <td>{{md this.description}}</td>
         </tr>
         {{/each}}
@@ -141,12 +141,12 @@
       {{/if}}
 
       <div class="docs-code">
-        <pre><code>{{writeFunction this}}</code></pre>
+        <pre><code>{{writeSassFunction this}}</code></pre>
       </div>
 
       {{md this.description}}
 
-      {{externalLink this.link}}
+      {{writeSassLink this.link}}
 
       {{#if this.parameter}}
       <table class="docs-variable-table">
@@ -156,8 +156,8 @@
         {{#each this.parameter}}
         <tr>
           <td><code>${{this.name}}</code></td>
-          <td>{{sassTypes this.type}}</td>
-          <td><code>{{sassValue this.default}}</code></td>
+          <td>{{formatSassTypes this.type}}</td>
+          <td><code>{{formatSassValue this.default}}</code></td>
           <td>{{md this.description}}</td>
         </tr>
         {{/each}}
@@ -187,7 +187,7 @@
 
     {{#if requires}}{{#each requires}}
     <ul>
-      <li><code>{{jsModuleName this}}</code></li>
+      <li><code>{{formatJsModule this}}</code></li>
     </ul>
     {{/each}}{{/if}}
 
@@ -241,8 +241,8 @@
       </thead>
       {{#each js.member}}
       <tr>
-        <td><code>{{jsOptionName this.name}}</code></td>
-        <td><code>{{jsOptionValue this.examples}}</code></td>
+        <td><code>{{formatJsOptionName this.name}}</code></td>
+        <td><code>{{formatJsOptionValue this.examples}}</code></td>
         <td>{{this.description}}</td>
       </tr>
       {{/each}}
@@ -264,7 +264,7 @@
       </thead>
       {{#each js.event}}
         <tr>
-          <td><code>{{jsEventName this.name ../title}}</code></td>
+          <td><code>{{formatJsEventName this.name ../title}}</code></td>
           <td>{{this.description}}</td>
         </tr>
       {{/each}}
