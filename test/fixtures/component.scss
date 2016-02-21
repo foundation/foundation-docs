@@ -1,0 +1,70 @@
+/// This is a basic variable.
+/// @type Number
+$var-basic: true;
+
+/// This is a variable with multiple types.
+/// @type Number | List
+$var-multi: 10px;
+
+/// This ia a map.
+/// @type Map
+$var-map: (
+  one: true,
+  two: false,
+);
+
+/// This is a variable with a changelog.
+/// @type Number
+/// @since 6.2.0 Changed to `10px`.
+/// @since 6.1.0 Added.
+$var-since: 10px;
+
+/// This is a mixin.
+///
+/// @param {Boolean} $param1 - This is a required parameter.
+/// @param {Boolean} $param2 [false] - This is a parameter with a default value.
+/// @param {Number|List} $param3 [10px] - This is a parameter with multiple types.
+///
+/// @content This is where mixin content usage is explained.
+///
+/// @example html - HTML needed
+///   <div class="thing"></div>
+/// @example scss - Mixin usage
+///   .thing {
+///     @include mixin-basic;
+///   }
+///
+/// @since 6.2 `$param3` added as an optional parameter.
+/// @since 6.1 Added.
+///
+/// @link http://foundation.zurb.com/sites Foundation for Sites
+@mixin mixin-basic($param1, $param2: false, $param3: 10px) {
+  color: dodgerblue;
+  @content;
+}
+
+/// This is a private mixin. It shouldn't show up in the finished documentation.
+/// @access private
+@mixin mixin-private {
+  color: dodgerblue;
+}
+
+/// This mixin is an alias for another one.
+/// @alias mixin-basic
+@mixin mixin-alias {
+  color: dodgerblue;
+}
+
+/// This is a deprecated mixin.
+/// @deprecated This mixin was replaced by `mixin-basic()` in version 6.2, and will be removed in 6.2.
+/// @see {Mixin} mixin-basic
+@mixin mixin-deprecated {
+  color: red;
+}
+
+/// Multiplies a number by itself.
+/// @param {Number} $num - Number to square.
+/// @returns {Number} The square of the input number.
+@function square($num) {
+  @return $num * $num;
+}
