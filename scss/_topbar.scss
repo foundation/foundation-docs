@@ -75,11 +75,11 @@ $topbar-hover-color: darken($topbar-background, 20%);
     border: 0;
   }
 
-  .is-down-arrow a {
+  .opens-right a {
     padding-right: 1rem !important;
   }
 
-  .is-down-arrow a::after {
+  .opens-right a::after {
     display: none !important;
   }
 }
