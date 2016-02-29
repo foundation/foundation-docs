@@ -6,6 +6,13 @@ This is a set of HTML templates and JavaScript utilities shared by the documenta
 - [Foundation for Apps](http://foundation.zurb.com/apps)
 - [Foundation for Emails](http://foundation.zurb.com/emails)
 
+## Table of Contents
+
+- [Installation](#installation)
+- [JavaScript Usage](#javascript-usage)
+- [Sass Usage](#sass-usage)
+- [Testing](#testing)
+
 ## Installation
 
 ```bash
@@ -53,3 +60,12 @@ The CSS used for the Foundation documentation is included as a series of Sass pa
 
 @import 'foundation-docs';
 ```
+
+## Testing
+
+There are two kinds of tests in the repository:
+
+- **Unit tests**, which are run with Mocha.
+- **Visual tests**, which are full HTML templates with all of the documentation UI elements.
+
+Run `npm test` to run the test suite, as well as a BrowserSync server pointing to the visual tests. You can make changes to the HTML, Sass, or JavaScript of the library and see the changes refresh live. Use this test environment to make changes to the documentation template.
