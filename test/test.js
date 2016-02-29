@@ -8,7 +8,7 @@ describe('Page Template', function() {
   it('produces a template leveraging Markdown, SassDoc, and JSDoc data', function(done) {
     supercollider
       .config({
-        src: 'test/fixtures/*.md',
+        src: 'test/fixtures/component.md',
         dest: 'test/output',
         template: 'templates/component.html',
         marked: docs.marked,
@@ -19,7 +19,7 @@ describe('Page Template', function() {
 
     var stream = supercollider.init();
     stream.on('finish', function() {
-      expect(fs.existsSync('test/output/index.html')).to.be.true;
+      expect(fs.existsSync('test/output/component.html')).to.be.true;
       done();
     });
   });

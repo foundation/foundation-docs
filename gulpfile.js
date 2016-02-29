@@ -17,7 +17,7 @@ supercollider
   .adapter('js')
 
 // Generates a documentation page
-gulp.task('page', function() {
+gulp.task('pages', function() {
   panini.refresh();
 
   return gulp.src('test/fixtures/*.md')
@@ -58,12 +58,12 @@ gulp.task('javascript', function() {
 });
 
 // Creates a server and watches for file changes
-gulp.task('default', ['page', 'sass', 'javascript'], function() {
+gulp.task('default', ['pages', 'sass', 'javascript'], function() {
   browser.init({
     server: 'test/visual/_build'
   });
 
-  gulp.watch(['test/visual/**/*.html'], ['page']);
+  gulp.watch(['text/fixtures/**/*', 'test/visual/**/*.html'], ['pages']);
   gulp.watch(['scss/**/*', 'test/visual/docs.scss'], ['sass']);
   gulp.watch(['js/**/*'], ['javascript']);
 });
