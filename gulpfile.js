@@ -47,12 +47,19 @@ gulp.task('sass', function() {
     .pipe(browser.reload({ stream: true }));
 });
 
+gulp.task('javascript', function() {
+  gulp.src('js/**/*.js')
+    .pipe($.concat('docs.js'))
+    .pipe(gulp.dest('test/visual/_build'));
+});
+
 // Creates a server and watches for file changes
-gulp.task('default', ['page', 'sass'], function() {
+gulp.task('default', ['page', 'sass', 'javascript'], function() {
   browser.init({
     server: 'test/visual/_build'
   });
 
   gulp.watch(['test/visual/**/*.html'], ['page']);
-  gulp.watch(['scss', 'test/visual/docs.scss'], ['sass']);
+  gulp.watch(['scss/**/*', 'test/visual/docs.scss'], ['sass']);
+  gulp.watch(['js/**/*'], ['javascript']);
 });
