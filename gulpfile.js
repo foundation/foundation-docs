@@ -12,6 +12,7 @@ supercollider
     marked: docs.marked,
     handlebars: docs.handlebars
   })
+  .searchConfig({})
   .adapter('sass')
   .adapter('js')
 
@@ -27,7 +28,10 @@ gulp.task('page', function() {
       partials: 'test/visual/partials'
     }))
     .pipe(gulp.dest('test/visual/_build'))
-    .on('finish', browser.reload);
+    .on('finish', function() {
+      browser.reload();
+      supercollider.buildSearch('test/visual/_build/data/search.json');
+    });
 });
 
 // Compiles documentation CSS

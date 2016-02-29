@@ -45,6 +45,6 @@
     "mocha": "^2.4.5",
     "motion-ui": "^1.2.2",
     "panini": "^1.2.0",
-    "supercollider": "^1.2.0"
+    "supercollider": "^1.4.1"
   }
 }
