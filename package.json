@@ -4,7 +4,7 @@
   "description": "Common templates and utilities for the Foundation family documentation.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha && gulp"
   },
   "repository": {
     "type": "git",
@@ -34,8 +34,16 @@
     "strip-indent": "^1.0.1"
   },
   "devDependencies": {
+    "browser-sync": "^2.11.1",
     "chai": "^3.5.0",
+    "foundation-sites": "^6.2.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-sass": "^2.2.0",
     "mocha": "^2.4.5",
+    "motion-ui": "^1.2.2",
+    "panini": "^1.2.0",
     "supercollider": "^1.2.0"
   }
 }

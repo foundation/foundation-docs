@@ -19,7 +19,7 @@ describe('Page Template', function() {
 
     var stream = supercollider.init();
     stream.on('finish', function() {
-      expect(fs.existsSync('test/output/component.html')).to.be.true;
+      expect(fs.existsSync('test/output/index.html')).to.be.true;
       done();
     });
   });
