@@ -69,3 +69,17 @@ There are two kinds of tests in the repository:
 - **Visual tests**, which are full HTML templates with all of the documentation UI elements.
 
 Run `npm test` to run the test suite, as well as a BrowserSync server pointing to the visual tests. You can make changes to the HTML, Sass, or JavaScript of the library and see the changes refresh live. Use this test environment to make changes to the documentation template.
+
+### Testing with Foundation
+
+To test with an actual framework's documentation, you can hook the two folders together using `npm link`.
+
+Let's assume you have `foundation-sites` and `foundation-docs` in the same folder:
+
+```
+- sites/
+  - foundation-sites/
+  - foundation-docs/
+```
+
+While inside of the `foundation-sites/` folder, run `npm link ../foundation-docs`. Now Foundation's documentation will reference the changes you're making.
