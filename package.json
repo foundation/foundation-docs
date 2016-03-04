@@ -25,7 +25,7 @@
   "dependencies": {
     "handlebars": "^3.0.1",
     "highlight.js": "^9.0.0",
-    "inky": "^1.1.0",
+    "inky": "^1.2.0",
     "js-beautify": "^1.6.2",
     "kebab-case": "^1.0.0",
     "marked": "^0.3.5",
