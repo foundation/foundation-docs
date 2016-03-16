@@ -1,7 +1,14 @@
+/**
+ * This module sets up the search bar.
+ */
+
 !function() {
 
 var source = {
+  // Only show 10 results at once
   limit: 10,
+
+  // Function to fetch result list and then find a result;
   source: function(query, sync, async) {
     query = query.toLowerCase();
 
@@ -14,13 +21,18 @@ var source = {
       }));
     });
   },
+
+  // Name to use for the search result itself
   display: function(item) {
     return item.name;
   },
+
   templates: {
+    // HTML that renders if there are no results
     notFound: function(query) {
       return '<div class="tt-empty">No results for "' + query.query + '".</div>';
     },
+    // HTML that renders for each result in the list
     suggestion: function(item) {
       return '<div><span class="name">' + item.name + '<span class="meta">' + item.type + '</span></span> <span class="desc">' + item.description + '</span></div>';
     }

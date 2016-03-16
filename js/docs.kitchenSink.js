@@ -1,6 +1,11 @@
+/**
+ * This module activates on a Kitchen Sink page, and changes how code examples are rendered.
+ * The code example is hidden, and can be revealed with a toggle.
+ */
+
 !function() {
 
-$ks = $('#docs-kitchen-sink');
+var $ks = $('#docs-kitchen-sink');
 if (!$ks.length) return;
 
 $ks.find('[data-docs-code]').each(function() {

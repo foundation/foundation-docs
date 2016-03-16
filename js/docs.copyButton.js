@@ -1,4 +1,6 @@
-// Adds a copy button to all code examples in the docs.
+/**
+ * This module adds a copy button to all code examples in the docs.
+ */
 
 !function() {
 
