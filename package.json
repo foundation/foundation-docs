@@ -33,7 +33,7 @@
     "multiline": "^1.0.2",
     "querystring": "^0.2.0",
     "require-dir": "^0.3.0",
-    "string-template": "^0.2.1",
+    "string-template": "^1.0.0",
     "strip-indent": "^1.0.1"
   },
   "devDependencies": {
