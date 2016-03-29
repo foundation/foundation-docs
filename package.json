@@ -49,6 +49,7 @@
     "motion-ui": "^1.2.2",
     "panini": "^1.2.0",
     "rimraf": "^2.5.2",
+    "striptags": "^2.1.1",
     "supercollider": "^1.4.1"
   }
 }
