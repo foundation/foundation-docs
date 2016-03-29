@@ -164,7 +164,7 @@ describe('Handlebars Helpers', () => {
       });
 
       it('returns an empty string if an option is missing a value', () => {
-        compare('{{formatJsOptionValue}}', '');
+        compare('{{formatJsOptionValue undef}}', '');
       });
     });
 
@@ -315,7 +315,7 @@ describe('Handlebars Helpers', () => {
       });
 
       it('prints an empty string if no value is defined', () => {
-        compare('{{formatSassTypes}}', '');
+        compare('{{formatSassTypes undef}}', '');
       });
     });
 
@@ -339,7 +339,7 @@ describe('Handlebars Helpers', () => {
       });
     });
 
-    describe('writeSassLink', () => {
+    describe('{{writeSassLink}}', () => {
       it('formats a SassDoc @link annotation', () => {
         var data = {
           link: [{
