@@ -194,6 +194,155 @@ describe('Handlebars Helpers', () => {
       });
     });
   });
+
+  describe('Sass', () => {
+    describe('{{writeSassMixin}}', () => {
+      it('formats a Sass mixin with no parameters', () => {
+        var data = {
+          mixin: {
+            context: { name: 'name' }
+          }
+        };
+
+        var template = Handlebars.compile('{{writeSassMixin mixin}}');
+        var output = stripHtml(template(data));
+
+        expect(output).to.equal('@include name;');
+      });
+
+      it('formats a Sass mixin with parameters', () => {
+        var data = {
+          mixin: {
+            context: { name: 'name' },
+            parameter: [
+              { name: 'param1' },
+              { name: 'param2' }
+            ]
+          }
+        };
+
+        var template = Handlebars.compile('{{writeSassMixin mixin}}');
+        var output = stripHtml(template(data));
+
+        expect(output).to.equal('@include name($param1, $param2);');
+      });
+
+      it('formats a Sass mixin with a @content directive', () => {
+        var data = {
+          mixin: {
+            context: { name: 'name' },
+            content: 'Content'
+          }
+        };
+
+        var template = Handlebars.compile('{{writeSassMixin mixin}}');
+        var output = stripHtml(template(data));
+
+        expect(output).to.equal('@include name { }');
+      });
+    });
+
+    describe('{{writeSassFunction}}', () => {
+      it('formats a Sass function with no parameters', () => {
+        var data = {
+          func: {
+            context: { name: 'name' }
+          }
+        };
+
+        var template = Handlebars.compile('{{writeSassFunction func}}');
+        var output = stripHtml(template(data));
+
+        expect(output).to.equal('name()');
+      });
+
+      it('formats a Sass function with parameters', () => {
+        var data = {
+          func: {
+            context: { name: 'name' },
+            parameter: [
+              { name: 'param1' },
+              { name: 'param2' }
+            ]
+          }
+        };
+
+        var template = Handlebars.compile('{{writeSassFunction func}}');
+        var output = stripHtml(template(data));
+
+        expect(output).to.equal('name($param1, $param2)');
+      });
+    });
+
+    describe('{{writeSassVariable}}', () => {
+      it('formats a Sass variable', () => {
+        var data = {
+          variable: {
+            context: {
+              name: 'name',
+              value: 'value'
+            }
+          }
+        };
+
+        var template = Handlebars.compile('{{writeSassVariable variable}}');
+        var output = stripHtml(template(data));
+
+        expect(output).to.equal('$name: value;');
+      });
+    });
+
+    describe('{{formatSassTypes}}', () => {
+      it('formats a SassDoc @type annotation with one value', () => {
+        compare('{{formatSassTypes "String"}}', 'String');
+      });
+
+      it('formats a SassDoc @type annotation with multiple values', () => {
+        compare('{{formatSassTypes "String|List"}}', 'String or List');
+      });
+
+      it('prints an empty string if no value is defined', () => {
+        compare('{{formatSassTypes}}', '');
+      });
+    });
+
+    describe('{{formatSassValue}}', () => {
+      it('formats basic values as-is', () => {
+        compare('{{formatSassValue "value"}}', 'value');
+      });
+
+      it('formats maps with each value on a separate line', () => {
+        var template = Handlebars.compile(`{{formatSassValue '(one: one,two: two)'}}`);
+        var output = template();
+
+        expect(output).to.equal('one: one&lt;br&gt;two: two');
+      });
+
+      it('returns the word "None" for undefined values', () => {
+        var template = Handlebars.compile('{{formatSassValue undef}}');
+        var output = template();
+
+        expect(output).to.contain('None');
+      });
+    });
+
+    describe('writeSassLink', () => {
+      it('formats a SassDoc @link annotation', () => {
+        var data = {
+          link: [{
+            url: '#',
+            caption: 'Caption'
+          }]
+        };
+
+        compare('{{writeSassLink link}}', '<p><strong>Learn more:</strong> <a href="#">Caption</a></p>', data);
+      });
+
+      it('prints an empty string for an undefined link', () => {
+        compare('{{writeSassLink undef}}', '');
+      });
+    });
+  });
 });
 
 function compare(input, expected, data) {
