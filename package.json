@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/zurb/foundation-docs#readme",
   "dependencies": {
+    "cheerio": "^0.20.0",
     "handlebars": "^3.0.1",
     "highlight.js": "^9.0.0",
     "inky": "^1.2.6",
