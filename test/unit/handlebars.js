@@ -2,6 +2,19 @@ var expect = require('chai').expect;
 var Handlebars = require('../../lib/handlebars');
 var stripHtml = require('striptags');
 
+/**
+ * Compares the output of a Handlebars template to an expected string. Data can also be passed to the template function.
+ * @param {string} input - String to compile into a Handlebars template.
+ * @param {string} expected - Expected output of the template.
+ * @param {object} data - Data to pass to the Handlebars context.
+ * @throws {AssertionError} Throws an error if the Handlebars output and expected output are not equal.
+ */
+function compare(input, expected, data) {
+  var template = Handlebars.compile(input);
+  expect(template(data || {})).to.equal(expected);
+}
+
+// A note about assertions: most of these tests use the `compare()` function above. However, in cases where the output needs to be modified in some way before it's compared, or in cases where a substring is being searched for, a Handlebars template is created manually inside of the test.
 describe('Handlebars Helpers', () => {
   describe('Formatting', () => {
     describe('{{md}}', () => {
@@ -344,8 +357,3 @@ describe('Handlebars Helpers', () => {
     });
   });
 });
-
-function compare(input, expected, data) {
-  var template = Handlebars.compile(input);
-  expect(template(data || {})).to.equal(expected);
-}
