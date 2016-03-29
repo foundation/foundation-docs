@@ -175,6 +175,25 @@ describe('Handlebars Helpers', () => {
       });
     });
   });
+
+  describe('Links', () => {
+    describe('{{editLink}}', () => {
+      it('generates a GitHub edit link point to a repository, branch, and file', () => {
+        compare('{{editLink "foundation-sites" "master" "docs/pages/index.html"}}', 'https://github.com/zurb/foundation-sites/edit/master/docs/pages/index.md');
+      });
+    });
+
+    describe('{{issueLink}}', () => {
+      it('generates a GitHub link to open a new issue, with a preset title', () => {
+        var template = Handlebars.compile('{{issueLink "foundation-sites" "Plugin"}}');
+        var output = template();
+
+        expect(output, 'links to GitHub issue tracker').to.contain('https://github.com/zurb/foundation-sites/issues/new?title');
+        expect(output, 'includes tag in preset title').to.contain('Plugin');
+        expect(output, 'includes super loud title that you should replace').to.contain('ISSUE%20NAME%20HERE');
+      });
+    });
+  });
 });
 
 function compare(input, expected, data) {
