@@ -2,35 +2,9 @@ var expect = require('chai').expect;
 var fs = require('fs');
 var rimraf = require('rimraf');
 
-describe('Page Template', function() {
-  var docs = require('..');
-  var handlebars = require('handlebars');
-  var supercollider = require('supercollider');
-
-  it('produces a template leveraging Markdown, SassDoc, and JSDoc data', function(done) {
-    supercollider
-      .config({
-        src: 'test/fixtures/component.md',
-        dest: 'test/output',
-        template: 'templates/component.html',
-        marked: docs.marked,
-        handlebars: docs.handlebars,
-        quiet: true
-      })
-      .adapter('sass')
-      .adapter('js')
-
-    var stream = supercollider.init();
-    stream.on('finish', function() {
-      expect(fs.existsSync('test/output/component.html')).to.be.true;
-      done();
-    });
-  });
-});
-
 describe('Utilities', function() {
   describe('buildInkySample', function() {
-    var buildInkySample = require('../lib/util/buildInkySample');
+    var buildInkySample = require('../../lib/util/buildInkySample');
 
     afterEach(function(done) {
       rimraf('_build', done);
@@ -57,7 +31,7 @@ describe('Utilities', function() {
   });
 
   describe('escape', function() {
-    var escape = require('../lib/util/escape');
+    var escape = require('../../lib/util/escape');
 
     it('escapes a string for use in an HTML anchor', function() {
       var escapedText = escape('Title of Section');
@@ -66,7 +40,7 @@ describe('Utilities', function() {
   });
 
   describe('writeHeading', function() {
-    var writeHeading = require('../lib/util/writeHeading');
+    var writeHeading = require('../../lib/util/writeHeading');
 
     it('writes a section heading with custom classes, an escaped ID, and an anchor icon', function() {
       var heading = writeHeading('Section Title', 2);

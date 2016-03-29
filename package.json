@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test:unit",
-    "test:unit": "mocha",
+    "test:unit": "mocha test/unit/*.js",
     "test:visual": "gulp"
   },
   "repository": {
