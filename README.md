@@ -17,8 +17,14 @@ This is a set of HTML templates and JavaScript utilities shared by the documenta
 
 ## Installation
 
+This codebase isn't on npm, but this Git repository can be referenced in a `package.json`:
+
 ```bash
-npm install foundation-docs --save-dev
+{
+  "dependencies": {
+    "foundation-docs": "zurb/foundation-docs"
+  }
+}
 ```
 
 ## JavaScript Usage
