@@ -6,6 +6,8 @@ var supercollider = require('supercollider');
 
 describe('Page Template', function() {
   it('produces a template leveraging Markdown, SassDoc, and JSDoc data', function(done) {
+    this.timeout(0);
+
     supercollider
       .config({
         src: 'test/fixtures/component.md',
