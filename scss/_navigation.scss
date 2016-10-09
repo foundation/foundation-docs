@@ -60,6 +60,8 @@
 
   .menu & a {
     margin-left: 6px;
+    display: inline-block;
+    padding: 0;
 
     &:hover {
       background: transparent;
