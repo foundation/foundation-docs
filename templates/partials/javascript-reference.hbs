@@ -59,11 +59,17 @@
 
     <table class="docs-variable-table">
       <thead>
-        <tr><th>Name</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+        </tr>
       </thead>
       {{#each js.member}}
       <tr>
         <td><code>{{formatJsOptionName this.name}}</code></td>
+        <td><code>{{formatJsOptionTypes this.type}}</code></td>
         <td><code>{{formatJsOptionValue this.defaultvalue}}</code></td>
         <td>{{this.description}}</td>
       </tr>
