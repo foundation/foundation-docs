@@ -23,6 +23,12 @@
   }
 }
 
+.foundation-toc-ad-unit {
+  > div {
+    padding: 5px;
+    border: 1px solid #cacaca;
+  }
+}
 // .docs-toc-wrap.is-stuck {
 //   max-height: calc(100vh - 1rem);
 //   overflow-y: auto;

@@ -1,15 +1,30 @@
 # Foundation Docs
 
+[![Build Status](https://travis-ci.org/zurb/foundation-docs.svg?branch=master)](https://travis-ci.org/zurb/foundation-docs)
+
 This is a set of HTML templates and JavaScript utilities shared by the documentation pages for the [Foundation](http://foundation.zurb.com) family of frameworks, including:
 
 - [Foundation for Sites](http://foundation.zurb.com/sites)
 - [Foundation for Apps](http://foundation.zurb.com/apps)
 - [Foundation for Emails](http://foundation.zurb.com/emails)
 
+## Table of Contents
+
+- [Installation](#installation)
+- [JavaScript Usage](#javascript-usage)
+- [Sass Usage](#sass-usage)
+- [Testing](#testing)
+
 ## Installation
 
+This codebase isn't on npm, but this Git repository can be referenced in a `package.json`:
+
 ```bash
-npm install foundation-docs --save-dev
+{
+  "dependencies": {
+    "foundation-docs": "zurb/foundation-docs"
+  }
+}
 ```
 
 ## JavaScript Usage
@@ -53,3 +68,26 @@ The CSS used for the Foundation documentation is included as a series of Sass pa
 
 @import 'foundation-docs';
 ```
+
+## Testing
+
+There are two kinds of tests in the repository:
+
+- **Unit tests**, which are run with Mocha.
+- **Visual tests**, which are full HTML templates with all of the documentation UI elements.
+
+Run `npm test` to run the test suite, as well as a BrowserSync server pointing to the visual tests. You can make changes to the HTML, Sass, or JavaScript of the library and see the changes refresh live. Use this test environment to make changes to the documentation template.
+
+### Testing with Foundation
+
+To test with an actual framework's documentation, you can hook the two folders together using `npm link`.
+
+Let's assume you have `foundation-sites` and `foundation-docs` in the same folder:
+
+```
+- sites/
+  - foundation-sites/
+  - foundation-docs/
+```
+
+While inside of the `foundation-sites/` folder, run `npm link ../foundation-docs`. Now Foundation's documentation will reference the changes you're making.

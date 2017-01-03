@@ -1,6 +1,6 @@
 ---
 title: Component
-description: Lorem ipsum.
+description: This is a component page.
 tags:
   - tag
 sass: test/fixtures/component.scss
