@@ -29,7 +29,7 @@
   <section>
     {{#heading 3 'sass-mixins'}}Mixins{{/heading}}
 
-    <p>Mixin lets us group CSS declarations that can be reused throughout. We use these mixins to build the final CSS output of a component. You can also use the mixins yourself to build your own class structure out of our components. To use a mixin simply use <code>@include</code> followed by the name of the mixin. Optionally, add argument(s) to a mixin for customization of the component.</p>
+    <p>Mixin lets us group CSS declarations that can be reused throughout. We use these mixins to build the final CSS output of a component. You can also use the mixins yourself to build your own class structure out of our components. To use a mixin simply use <code>@include</code> followed by the name of the mixin. Optionally, add argument(s) to a mixin for additional customization of the component.</p>
 
     {{#each sass.mixin}}{{#filter this}}
     <section {{#if this.deprecated }}class="docs-deprecated"{{/if}}>
