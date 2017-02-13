@@ -7,7 +7,7 @@ describe('Sass', () => {
       file: 'test/visual/docs.scss',
       includePaths: [
         'scss',
-        'node_modules/foundation-sites/scss',
+        'node_modules/tbg-foundation-sites/scss',
         'node_modules/motion-ui/src'
       ]
     }, (err, result) => {
