@@ -1,15 +1,14 @@
 .welcome-hero {
   background-color: $primary-color;
-//  margin-top: 0.5rem;
   padding: 2rem;
-  
+
   .docs-page-title {
-    color: white;
+    color: $white;
     line-height: 3rem;
   }
-  
+
   .docs-page-lead {
-    color: white;
+    color: $white;
   }
 }
 
