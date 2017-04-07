@@ -2,10 +2,19 @@
   <nav class="columns docs-toc-wrap" data-sticky data-anchor="docs" data-sticky-on="large">
     <div class="docs-toc hide" id="docsTOC">
       <ul class="vertical menu" data-docs-toc>
-        <li class="docs-nav-title">On this page:</li>
+        <li class="docs-nav-title">{{ title }}</li>
+      </ul>
+      
+      <hr class="docs-toc-divider">
+    
+      <ul class="docs-contribute-menu">
+        <li><a href="{{ editLink repoName editBranch fileName }}" target="_blank"><i class="fi-pencil"></i>Edit this Page</a></li>
+        <li><a href="{{#if library}}{{ library.github }}/issues{{else}}{{ issueLink repoName title }}{{/if}}" target="_blank"><i class="fi-social-github"></i>Report a Bug</a></li>
+        <li><a href="http://foundation.zurb.com/forum" target="_blank"><i class="fi-comment"></i>Get Help</a></li>
       </ul>
     </div>
+    
     <div class="foundation-toc-ad-unit" id="TOCAdUnit">
     </div>
-  </nav>
+  </nav> 
 </div>

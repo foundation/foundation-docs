@@ -1,8 +1,10 @@
 // Component navigation menu seen on every page.
 
 .docs-nav.menu {
-  margin-top: 0.5rem;
-  background: #fafafa;
+//  margin-top: 0.5rem;
+  overflow: auto;
+  height: calc(100vh - 115px);
+  background: #f4f4f4;
   padding-top: 1rem;
   padding-bottom: 1rem;
 

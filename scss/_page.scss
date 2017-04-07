@@ -10,6 +10,12 @@
   margin-bottom: 0.5rem;
 }
 
+.docs-component {
+  overflow: auto;
+  height: calc(100vh - 115px);
+}
+
+
 .docs-component section {
   position: relative;
 }

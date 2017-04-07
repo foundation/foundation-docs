@@ -13,7 +13,7 @@
     z-index: 1;
     font-family: 'foundation-icons';
     font-size: 1.75rem;
-    color: $primary-color;
+    color: $dark-gray;
   }
 }
 
@@ -22,19 +22,28 @@
 .tt-hint {
   right: 0;
   padding-left: 3rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0rem;
   box-shadow: none;
-  border-width: 1px 0;
+//  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.15);
+//  border-width: 1px 0;
   font-size: 1.3rem;
   height: 3.5rem;
   font-weight: 300;
+  border: 1px solid #e0e0e0;
+  border-top: none;
+  border-bottom: none;
 
   &:hover {
-    box-shadow: none;
+//    box-shadow: none;
   }
 
   &:focus {
-    border-width: 1px 0;
+//    border-width: 1px 0;
+//    border: none;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+    border-bottom: none;
+    box-shadow: none;
   }
 }
 
@@ -102,4 +111,70 @@
     margin-left: 1rem;
     margin-right: 2rem;
   }
+}
+
+.secondary-bar {
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.version-dropdown {
+  
+}
+
+.version-menu-list {
+  
+}
+
+.version-dropdown-label {
+  color: $black;
+  display: block;
+  width: 100%;
+}
+
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+  border-color: $medium-gray transparent transparent;
+}
+
+.version-dropdown-menu {
+  
+}
+
+.version-dropdown-menu-link {
+  
+  a {
+    color: $black;
+    font-size: 1rem;
+  }
+}
+
+
+.github-button {
+  margin-left: 1rem;
+}
+
+.social-container {
+  padding-top: 0.9rem;
+}
+
+.social-list {
+  list-style: none;
+  margin-bottom: 0;
+  
+  li {
+    display: inline-block;
+  }
+  
+}
+
+.foundation-version-label {
+  font-size: 0.9rem;
+  color: #6c6c6c;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+
+.foundation-version-number {
+  
 }
