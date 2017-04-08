@@ -1,15 +1,25 @@
 .welcome-hero {
   background-color: $primary-color;
-//  margin-top: 0.5rem;
   padding: 2rem;
-  
-  .docs-page-title {
-    color: white;
-    line-height: 3rem;
+  font-family: 'Proxima Nova', sans-serifs;
+
+  .welcome-hero-message {
+    position: relative;
+    top: 0%;
+    transform: translateY(-0%);
   }
-  
-  .docs-page-lead {
+
+  .welcome-hero-title {
     color: white;
+    line-height: 3.2rem;
+    margin-bottom: 1rem;
+    font-family: 'Proxima Nova', sans-serifs;
+  }
+
+  .welcome-hero-lead {
+    color: lighten($primary-color, 40%);
+    font-size: 1.25rem;
+    line-height: 1.5;
   }
 }
 
