@@ -2,43 +2,54 @@
   background-color: $primary-color;
   padding: 2rem;
   font-family: 'Proxima Nova', sans-serifs;
-  
+
   .welcome-hero-content {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    padding-right: 1rem;
-    
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+
     @include breakpoint(medium down) {
-      flex-direction: column;
+      display: block;
     }
   }
-  
-  
+
   .welcome-hero-message {
-    position: relative;
-    top: 0%;
-    transform: translateY(-0%);
-    padding-left: 1rem;
-    padding-right: 2.5rem;
+    flex: 1 0 0;
+
+    + .welcome-hero-video {
+      padding-left: 2rem;
+
+      @include breakpoint(medium down) {
+        padding-left: 0;
+      }
+    }
+
+    @include breakpoint(medium down) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .welcome-hero-video {
+    flex: 1 0 0;
+
+    .responsive-embed {
+      margin-bottom: 0;
+    }
   }
 
   .welcome-hero-title {
-    color: white;
+    color: $white;
     line-height: 3.2rem;
     margin-bottom: 1rem;
     font-family: 'Proxima Nova', sans-serifs;
-//    font-size: 3.5rem;
   }
 
   .welcome-hero-lead {
     color: lighten($primary-color, 40%);
     font-size: 1.25rem;
     line-height: 1.5;
+    margin-bottom: 0;
   }
-}
-
-.responsive-embed iframe {
-  height: 315px;
 }
