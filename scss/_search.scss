@@ -150,9 +150,17 @@
   line-height: 1.25rem;
   padding-top: 0.42rem;
   padding-bottom: 0.43rem;
+  padding-left: 1rem;
   margin-bottom: 0;
   background: none;
   text-align: left;
+}
+
+.changelog-link {
+  font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+  text-align: right;
+  margin-left: 0.25rem;
 }
 
 .version-dropdown-label:hover,
@@ -166,7 +174,7 @@
 }
 
 .version-dropdown-menu {
-
+  
 }
 
 .version-dropdown-menu-link {
@@ -214,18 +222,18 @@
   color: #383838;
 }
 
-.foundation-version-number::after {
-  display: inline-block;
-  margin-left: 0.5rem;
-  width: 0;
-  height: 0;
-  border: inset 5px;
-  content: '';
-  border-bottom-width: 1px;
-  border-top-style: solid;
-  border-color: #c3c3c3 transparent transparent;
-  right: 10px;
-}
+//.foundation-version-number::after {
+//  display: inline-block;
+//  margin-left: 0.5rem;
+//  width: 0;
+//  height: 0;
+//  border: inset 5px;
+//  content: '';
+//  border-bottom-width: 1px;
+//  border-top-style: solid;
+//  border-color: #c3c3c3 transparent transparent;
+//  right: 10px;
+//}
 
 .version-dropdown-menu {
   list-style: none;
