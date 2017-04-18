@@ -9,8 +9,13 @@
     align-items: center;
     justify-content: center;
     padding-right: 1rem;
+    
+    @include breakpoint(medium down) {
+      flex-direction: column;
+    }
   }
-
+  
+  
   .welcome-hero-message {
     position: relative;
     top: 0%;
