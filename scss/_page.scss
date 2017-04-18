@@ -10,15 +10,10 @@
   margin-bottom: 0.5rem;
 }
 
-.docs-component {
-  overflow: auto;
-  height: calc(100vh - 100px);
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-}
-
 .docs-component-inner {
   padding-top: 2.5rem;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .docs-component section {
