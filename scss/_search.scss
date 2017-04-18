@@ -126,7 +126,7 @@
 }
 
 .secondary-bar {
-  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
+//  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
   border-bottom: 1px solid #e0e0e0;
   
   @include breakpoint(small only) {
@@ -200,7 +200,6 @@
   li {
     display: inline-block;
   }
-
 }
 
 .foundation-version-label {
@@ -208,9 +207,6 @@
   color: #9f9f9f;
   display: block;
   font-family: 'Proxima Nova', sans-serif;
-//  margin-bottom: 0.3rem;
-//  margin-left: 1rem;
-//  margin-top: 0.5rem;
 }
 
 
@@ -274,13 +270,7 @@
   left: 3rem;
 }
 
-//.social-button {
-//  
-//  @include breakpoint(720) {
-//    display: none;
-//  }
-//}
-
 .mobile-nav-button {
-  margin: 1rem;
+  margin: 0.5rem;
+  margin-top: 0.6rem;
 }
