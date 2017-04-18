@@ -13,6 +13,8 @@
 .docs-component {
   overflow: auto;
   height: calc(100vh - 100px);
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .docs-component-inner {
