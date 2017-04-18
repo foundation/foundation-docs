@@ -6,6 +6,8 @@
   background: #f7f7f7;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 
   @include breakpoint(small only) {
     height: auto;
