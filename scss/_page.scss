@@ -15,12 +15,18 @@
   height: calc(100vh - 100px);
 }
 
+.docs-component-inner {
+  padding-top: 2rem;
+}
+
 .docs-component section {
   position: relative;
 }
 
 .docs-component hr {
   max-width: none;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .docs-component .thumbnail {
