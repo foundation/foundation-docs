@@ -2,11 +2,21 @@
   background-color: $primary-color;
   padding: 2rem;
   font-family: 'Proxima Nova', sans-serifs;
+  
+  .welcome-hero-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-right: 1rem;
+  }
 
   .welcome-hero-message {
     position: relative;
     top: 0%;
     transform: translateY(-0%);
+    padding-left: 1rem;
+    padding-right: 2.5rem;
   }
 
   .welcome-hero-title {
@@ -14,6 +24,7 @@
     line-height: 3.2rem;
     margin-bottom: 1rem;
     font-family: 'Proxima Nova', sans-serifs;
+//    font-size: 3.5rem;
   }
 
   .welcome-hero-lead {
