@@ -25,3 +25,23 @@ if ($toc.length) {
 }
 
 }();
+
+
+var $footer = $('#footer');
+var $window = $(window);
+var $TOC = $('#docsToc');
+
+if($TOC.is('*')) {
+  $(window).on("load scroll", function() {
+      var footerOffset = $footer.offset().top;
+      var myScrollPosition = $(this).scrollTop();
+      var windowHeight = $window.height();
+      var footerHeight = $footer.outerHeight();
+
+      if ((myScrollPosition + windowHeight - footerHeight) > footerOffset) {
+        $TOC.addClass('fixed');
+      } else {
+        $TOC.removeClass('fixed');
+      }
+  });
+}

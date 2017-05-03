@@ -1,4 +1,4 @@
-<article class="docs-component" id="docs-{{escape title}}">
+<article class="docs-component" id="docs-{{escape title}}" style="position: relative; overflow-y: auto; height: 100vh;">
 
 <!--<a href="#docs-menu" class="small secondary button expanded hide-for-medium mobile-nav-button">Jump to Nav</a>-->
 
@@ -9,7 +9,7 @@
 
 {{!-- Start container for docs --}}
 <div class="large-9 columns docs-component-inner" id="docs">
-
+<div >
 {{ docs }}
 
 {{#if sass}}
@@ -26,11 +26,13 @@
 <!-- <hr> -->
 {{> building-blocks}}
 {{/if}}
-
+</div>
 </div>
 {{!-- End container for docs --}}
 
+<div class="large-3 columns show-for-medium">
 {{> table-of-contents}}
+</div>
 
 </div>
 {{!-- End container for docs and table of contents --}}
