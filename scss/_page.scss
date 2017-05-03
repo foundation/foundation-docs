@@ -10,6 +10,11 @@
   margin-bottom: 0.5rem;
 }
 
+.docs-component {
+    overflow-y: auto;
+    height: calc(100vh - 100px);
+}
+
 .docs-component-inner {
   padding-top: 2.5rem;
   overflow: auto;

@@ -26,22 +26,35 @@ if ($toc.length) {
 
 }();
 
-
-var $footer = $('#footer');
 var $window = $(window);
+var $container = $('.docs-component');
 var $TOC = $('#docsToc');
+var $TOCparent = $TOC.parent();
 
 if($TOC.is('*')) {
-  $(window).on("load scroll", function() {
-      var footerOffset = $footer.offset().top;
-      var myScrollPosition = $(this).scrollTop();
-      var windowHeight = $window.height();
-      var footerHeight = $footer.outerHeight();
+  var fixedTop = $container.offset().top;
+  var innerHeight = 0;
+  $container.children().each(function() {innerHeight += $(this).height()});
+  var containerHeight = $container.height();
+  var handler = function() {
+    var tocHeight = $TOC.height();
+    var parentOffset = $TOCparent.offset().top;
+    var windowScroll = $window.scrollTop();
+    var containerScroll = $container.scrollTop();
+    var visibleNav = (containerHeight + fixedTop) - windowScroll;
 
-      if ((myScrollPosition + windowHeight - footerHeight) > footerOffset) {
-        $TOC.addClass('fixed');
-      } else {
-        $TOC.removeClass('fixed');
-      }
-  });
+    if (visibleNav < tocHeight || containerScroll + tocHeight >= innerHeight) {
+      $TOC.removeClass('is-fixed');
+      $TOC.addClass('is-docked').css({top: 'auto'});
+    } else if ((windowScroll > fixedTop && parentOffset < windowScroll)|| (parentOffset < fixedTop - windowScroll)) {
+      var offset = Math.max(fixedTop - windowScroll, 0)
+      $TOC.removeClass('is-docked');
+      $TOC.addClass('is-fixed').css({top: offset});
+    } else {
+      $TOC.removeClass('is-fixed');
+      $TOC.removeClass('is-docked');
+    }
+  };
+  $(document).on('load scroll', handler);
+  $container.on('scroll', handler);
 }

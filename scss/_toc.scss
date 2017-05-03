@@ -38,8 +38,15 @@
   }
 }
 
-.docs-toc-wrap.fixed {
+.docs-toc-wrap.is-fixed {
   position: fixed;
+  max-width: 270px;
+}
+
+.docs-toc-wrap.is-docked {
+  position: absolute;
+  bottom: 0;
+  max-width: 270px;
 }
 
 
