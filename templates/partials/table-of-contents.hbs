@@ -1,5 +1,5 @@
-<nav class="docs-toc-wrap" id="docsToc">
-  <div class="docs-toc hide" id="docsTOC">
+<nav class="docs-toc-wrap" id="docsToc" data-sticky-container>
+  <div class="docs-toc hide" id="docsTOC" data-sticky data-anchor="docs">
     <ul class="vertical menu" data-docs-toc>
       <li class="docs-nav-title">{{ title }}</li>
     </ul>
@@ -11,10 +11,10 @@
       <li><a href="{{#if library}}{{ library.github }}/issues{{else}}{{ issueLink repoName title }}{{/if}}" target="_blank"><i class="fi-social-github"></i>Report a Bug</a></li>
       <li><a href="http://foundation.zurb.com/forum" target="_blank"><i class="fi-comment"></i>Get Help</a></li>
     </ul>
+    <div class="foundation-toc-ad-unit" id="TOCAdUnit">
+    </div>
   </div>
 
-  <div class="foundation-toc-ad-unit" id="TOCAdUnit">
-  </div>
 </nav>
 
 
