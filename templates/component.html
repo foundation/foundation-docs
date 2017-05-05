@@ -2,14 +2,20 @@
 
 <!--<a href="#docs-menu" class="small secondary button expanded hide-for-medium mobile-nav-button">Jump to Nav</a>-->
 
-{{> header}}
+{{#if video-hero}}
+{{> video-hero-header}}
+{{/if}}
 
 {{!-- Start container for docs and table of contents --}}
 <div class="row">
 
 {{!-- Start container for docs --}}
-<div class="large-9 columns docs-component-inner" id="docs">
-<div >
+<div class="large-9 columns docs-component-inner {{#if video-hero}}has-video-hero{{/if}}" id="docs">
+<div>
+{{#unless video-hero}}
+{{> header}}
+{{/unless}}
+
 {{ docs }}
 
 {{#if sass}}
