@@ -52,5 +52,8 @@
 }
 
 .subpage-intro-video {
-  height: 475px;
+  min-height: 225px;
+  @include breakpoint(medium) {
+    min-height: 475px;
+  }
 }

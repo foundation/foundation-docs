@@ -30,3 +30,23 @@
   }
 
 }
+// fullscreen vid for mobile
+@include breakpoint(small only) {
+  .docs-video-inner.playing {
+    position: fixed;
+    z-index: 10000;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    padding: 15px;
+    background-color: #fff;
+    .close-button {
+      font-size: rem-calc(24);
+      right: 2px;
+      top: -6px;
+      color: $black;
+    }
+  }
+}
+

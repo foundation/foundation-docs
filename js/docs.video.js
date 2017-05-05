@@ -57,4 +57,10 @@ if ($('#main-video').is('*')) {
     player.stopVideo();
   });
 
+  $('[data-open-video]').on('click', function() {
+    var seconds = Number($(this).data().openVideo);
+    player.seekTo(seconds, true);
+    player.playVideo();
+  });
+
 }
