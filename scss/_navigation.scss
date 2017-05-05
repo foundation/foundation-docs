@@ -2,12 +2,13 @@
 
 .docs-nav.menu {
   overflow: auto;
-  height: calc(100vh - 100px);
+  height: calc(100vh);
   background: #f7f7f7;
   padding-top: 1rem;
   padding-bottom: 1rem;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+  width: 100%;
 
   @include breakpoint(small only) {
     height: auto;
@@ -42,6 +43,12 @@
     margin-left: 5px;
     padding: 0.22222rem 0.44444rem 0.22222rem;
     font-size: 0.61111rem;
+  }
+}
+.docs-nav-container.is-stuck{
+  width: 100%;
+  .docs-nav.menu {
+    padding-top: 100px;
   }
 }
 

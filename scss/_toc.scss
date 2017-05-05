@@ -6,11 +6,15 @@
   border-bottom: 1px solid $medium-gray;
   font-size: 1rem;
 
+  &.is-stuck {
+    padding-top: 100px;
+  }
+
   @include breakpoint(large) {
     display: block !important;
     border-bottom: 0;
   }
-  
+
   .menu > li > a {
     line-height: 1.5;
     padding: 0.45rem 1.5rem;
@@ -35,10 +39,18 @@
     margin-bottom: 2rem;
   }
 }
-// .docs-toc-wrap.is-stuck {
-//   max-height: calc(100vh - 1rem);
-//   overflow-y: auto;
-// }
+
+.docs-toc-wrap.is-fixed {
+  position: fixed;
+  max-width: 270px;
+}
+
+.docs-toc-wrap.is-docked {
+  position: absolute;
+  bottom: 0;
+  max-width: 270px;
+}
+
 
 .ad-unit {
   max-width: 250px;
@@ -91,16 +103,16 @@
 
 .docs-contribute-menu {
   list-style: none;
-  
+
   li {
     padding: 0.45rem 0rem;
   }
-  
+
   li a {
     color: #939393;
     transition: color 0.35s ease;
   }
-  
+
   li a:hover {
     color: #000000;
     transition: color 0.35s ease;

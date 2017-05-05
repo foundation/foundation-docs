@@ -9,7 +9,7 @@
 
 {{!-- Start container for docs --}}
 <div class="large-9 columns docs-component-inner" id="docs">
-
+<div >
 {{ docs }}
 
 {{#if sass}}
@@ -26,11 +26,13 @@
 <!-- <hr> -->
 {{> building-blocks}}
 {{/if}}
-
+</div>
 </div>
 {{!-- End container for docs --}}
 
+<div class="large-3 columns show-for-medium">
 {{> table-of-contents}}
+</div>
 
 </div>
 {{!-- End container for docs and table of contents --}}

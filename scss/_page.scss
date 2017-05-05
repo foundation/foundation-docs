@@ -10,6 +10,22 @@
   margin-bottom: 0.5rem;
 }
 
+.docs-off-canvas-content {
+  position: relative;
+  padding-top: 100px;
+}
+
+.docs-sticky-top-bar {
+  height: 100px;
+  width: 100%;
+  background-color: $white;
+  margin-top: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
 .docs-component-inner {
   padding-top: 2.5rem;
   overflow: auto;
