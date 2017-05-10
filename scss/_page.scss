@@ -24,6 +24,15 @@
   top: 0;
   left: 0;
   z-index: 10;
+  transition: transform 0.4s;
+  @include breakpoint(small only) {
+    &.mobile-hidden {
+      transform: translateY(-100%);
+    }
+  }
+}
+.off-canvas {
+  z-index: 11;
 }
 
 .docs-component-inner {

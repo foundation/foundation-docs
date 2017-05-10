@@ -3,19 +3,34 @@
 .twitter-typeahead {
   display: block !important;
   position: relative;
-
-  &::before {
-    content: '\f16c';
-    display: block;
-    position: absolute;
-    top: 0.4rem;
-    left: 0.9rem;
-    z-index: 1;
-    font-family: 'foundation-icons';
-    font-size: 1.75rem;
-    color: $dark-gray;
-  }
 }
+
+.search-button {
+  position: relative;
+  top: 0;
+  right: 0;
+  margin-right: 0.5rem;
+  float: right;
+  width: 40px;
+  height: 40px;
+}
+
+.search-button::before, .twitter-typeahead::before {
+  content: '\f16c';
+  display: block;
+  position: absolute;
+  top: 0.4rem;
+  left: 0.9rem;
+  z-index: 1;
+  font-family: 'foundation-icons';
+  font-size: 1.75rem;
+  color: $dark-gray;
+}
+.search-button.search-open::before {
+  content: '\f217';
+}
+
+
 
 .docs-search:not(.tt-input),
 .tt-input,
@@ -128,6 +143,7 @@
 .secondary-bar {
 //  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
   border-bottom: 1px solid #e0e0e0;
+  position: relative;
   
   @include breakpoint(small only) {
 //    box-shadow: none;
@@ -271,6 +287,16 @@
 }
 
 .mobile-nav-button {
-  margin: 0.5rem;
-  margin-top: 0.6rem;
+  margin: 0.6rem 0.3rem 0.5rem 0.5rem;
+}
+
+.inline-search {
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  display: none;
+  &.expanded {
+    display: block;
+  }
 }
