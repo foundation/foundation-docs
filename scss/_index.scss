@@ -31,7 +31,12 @@
 }
 
 .docs-component-inner {
-  padding-left: 0.9375rem*2.9;
+  padding-left: 0.625rem * 2;
+  padding-right: 0.625rem * 2;
+  @include breakpoint(large) {
+    padding-left: 0.9375rem*2.9;
+    padding-right: 0.625rem;
+  }
   &.has-video-hero {
     padding-top: 2rem;
   }
