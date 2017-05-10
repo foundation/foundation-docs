@@ -58,7 +58,14 @@ if ($('#main-video').is('*')) {
   });
 
   $('[data-open-video]').on('click', function() {
-    var seconds = Number($(this).data().openVideo);
+    var time = $(this).data().openVideo;
+    var sections = String(time).split(':');
+    var seconds;
+    if(sections.length > 1) { 
+      seconds = (60 * Number(sections[0])) + Number(sections[1]);
+    } else {
+      seconds = Number(sections[0]);
+    }
     player.seekTo(seconds, true);
     player.playVideo();
   });
