@@ -5,7 +5,7 @@
 
   $window.on('scroll', function(){
     var scrollTop = $window.scrollTop();
-    nav.toggleClass('mobile-hidden', scrollTop > prev);
+    nav.toggleClass('mobile-hidden', scrollTop > prev && scrollTop > 100);
     prev = scrollTop;
   });
 
