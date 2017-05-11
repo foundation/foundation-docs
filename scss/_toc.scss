@@ -6,10 +6,6 @@
   border-bottom: 1px solid $medium-gray;
   font-size: 1rem;
 
-  &.is-stuck {
-    padding-top: 100px;
-  }
-
   @include breakpoint(large) {
     display: block !important;
     border-bottom: 0;
