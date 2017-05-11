@@ -1,7 +1,22 @@
-.video-close {
+.docs-video-inner .close-button {
   display: none;
 }
 
+
+.docs-video-inner {
+  .close-button {
+    font-size: rem-calc(24);
+    right: 2px;
+    top: -6px;
+    color: $black;
+  }
+}
+
+@include breakpoint(small only) {
+  .docs-video-inner.playing .close-button {
+    display: block;
+  }
+}
 
 // Move the video for desktops
 @include breakpoint(large up) {
@@ -20,12 +35,8 @@
     // padding: 0 0.5rem;
     display: block;
     padding: 15px;
-
     .close-button {
-      font-size: rem-calc(24);
-      right: 2px;
-      top: -6px;
-      color: $black;
+      display: block;
     }
   }
 

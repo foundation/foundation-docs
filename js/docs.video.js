@@ -36,7 +36,9 @@ if ($('#main-video').is('*')) {
     if (event.data == YT.PlayerState.PLAYING) {
       $videoInner.addClass('playing');
     } else {
-      $videoInner.removeClass('playing');
+      if(!$videoInner.hasClass('is-stuck')) {
+        $videoInner.removeClass('playing');
+      }
     }
   }
 
@@ -55,6 +57,7 @@ if ($('#main-video').is('*')) {
 
   $('[data-close-video]').on('click', function() {
     player.stopVideo();
+    $videoInner.removeClass('playing');
   });
 
   $('[data-open-video]').on('click', function() {
