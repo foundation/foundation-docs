@@ -6,9 +6,7 @@
   border-bottom: 1px solid $medium-gray;
   font-size: 1rem;
 
-  &.is-stuck {
-    padding-top: 100px;
-  }
+
 
   @include breakpoint(large) {
     display: block !important;
@@ -17,7 +15,8 @@
 
   .menu > li > a {
     line-height: 1.5;
-    padding: 0.45rem 1.5rem;
+    padding: 0.45rem 1rem;
+    font-size: 14px;
   }
 
   .active {
@@ -40,15 +39,8 @@
   }
 }
 
-.docs-toc-wrap.is-fixed {
+.docs-toc-wrap.fixed {
   position: fixed;
-  max-width: 270px;
-}
-
-.docs-toc-wrap.is-docked {
-  position: absolute;
-  bottom: 0;
-  max-width: 270px;
 }
 
 
