@@ -1,14 +1,23 @@
-.docs-video-inner .close-button {
-  display: none;
-}
-
 
 .docs-video-inner {
-  .close-button {
-    font-size: rem-calc(26);
-    right: 2px;
-    top: -6px;
+  transition: all 150ms ease-in-out;
+  .expand-contract, .close-button {
+    position: absolute;
     color: $black;
+    display: none;
+    top: 0;
+  }
+
+  .expand-contract {
+    right: 30px;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+
+  .close-button {
+    right: 4px;
+    top: 4px;
+    font-size: 0.8rem;
   }
 }
 
@@ -20,7 +29,7 @@
 
 // Move the video for desktops
 @include breakpoint(large up) {
-  .docs-video-inner.is-stuck.playing {
+  .docs-video-inner.is-stuck.autostick {
     position: fixed;
     z-index: 10000;
     right: 2%;
@@ -28,14 +37,34 @@
     bottom: 20px;
     transform: none;
     width: 340px;
-    border-radius: 4px;
-    transition: all 150ms ease-in-out;
+    border-radius: 0px;
     // padding: 0 0.5rem;
     display: block;
-    padding: 15px;
-    .close-button {
+    padding: 20px;
+    background-color: #fff;
+    .close-button, .expand-contract {
       display: block;
     }
+    &.expanded {
+      top: 10%;
+      bottom: auto;
+      left: 50%;
+      width: 640px;
+      transform: translateX(-50%);
+      z-index:1001;
+      .expand-contract::before {
+        content: "\f10d";
+      }
+    }
+  }
+  .video-overlay.expanded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    z-index:1000;
   }
 
 }
@@ -51,9 +80,9 @@
     padding: 15px;
     background-color: #fff;
     .close-button {
-      font-size: rem-calc(24);
-      right: 2px;
-      top: -6px;
+      font-size: 0.8rem;
+      right: 4px;
+      top: 4px;
       color: $black;
     }
   }

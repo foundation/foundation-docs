@@ -3,6 +3,7 @@
 if ($('#main-video').is('*')) {
   var $videoOuter = $('#subpage-intro-video');
   var $videoInner = $videoOuter.find('.docs-video-inner');
+  var $videoOverlay = $videoOuter.find('.video-overlay');
   var videoId = $('#main-video').data().video;
   var tag = document.createElement('script');
 
@@ -34,11 +35,9 @@ if ($('#main-video').is('*')) {
   //    the player should play for six seconds and then stop.
   function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING) {
-      $videoInner.addClass('playing');
+      $videoInner.addClass('playing').addClass('autostick');
     } else {
-      if(!$videoInner.hasClass('is-stuck')) {
-        $videoInner.removeClass('playing');
-      }
+      $videoInner.removeClass('playing');
     }
   }
 
@@ -57,7 +56,13 @@ if ($('#main-video').is('*')) {
 
   $('[data-close-video]').on('click', function() {
     player.stopVideo();
-    $videoInner.removeClass('playing');
+    $videoInner.removeClass('autostick');
+    $videoOverlay.removeClass('expanded');
+  });
+
+  $('[data-expand-contract-video]').on('click', function() {
+    $videoInner.toggleClass('expanded');
+    $videoOverlay.toggleClass('expanded');
   });
 
   $('[data-open-video]').on('click', function() {
@@ -71,6 +76,8 @@ if ($('#main-video').is('*')) {
     }
     player.seekTo(seconds, true);
     player.playVideo();
+    $videoOverlay.addClass('expanded');
+    $videoInner.addClass('expanded').addClass('autostick');
   });
 
 }

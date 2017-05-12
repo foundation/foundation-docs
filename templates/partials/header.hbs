@@ -15,12 +15,14 @@
   {{/if}}
 
   {{#if video}}<div id="subpage-intro-video" class="subpage-intro-video">
-    <div class="docs-video-inner">
-      <span class="close-button" data-close-video>&times;</span>
+    <div class="docs-video-inner autostick">
+      <i class="expand-contract fi-arrows-expand" data-expand-contract-video></i>
+      <span class="close-button" data-close-video><i class="fi-x"></i></span>
       <div class="responsive-embed widescreen">
         <div id="main-video" data-video="{{video}}"></div>
       </div>
     </div>
+    <div class="video-overlay"></div>
   </div>{{/if}}
 
 </header>
