@@ -56,7 +56,7 @@ if ($('#main-video').is('*')) {
 
   $('[data-close-video]').on('click', function() {
     player.stopVideo();
-    $videoInner.removeClass('autostick');
+    $videoInner.removeClass('autostick').removeClass('expanded');
     $videoOverlay.removeClass('expanded');
   });
 
