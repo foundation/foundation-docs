@@ -5,7 +5,7 @@
 
 .docs-video-inner {
   .close-button {
-    font-size: rem-calc(24);
+    font-size: rem-calc(26);
     right: 2px;
     top: -6px;
     color: $black;
@@ -23,14 +23,12 @@
   .docs-video-inner.is-stuck.playing {
     position: fixed;
     z-index: 10000;
-    left: 2%;
+    right: 2%;
     top: auto;
     bottom: 20px;
     transform: none;
     width: 340px;
     border-radius: 4px;
-    box-shadow: 0 -1px 10px rgba(#000, 0.2);
-    opacity: 0.7;
     transition: all 150ms ease-in-out;
     // padding: 0 0.5rem;
     display: block;
