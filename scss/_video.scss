@@ -22,13 +22,18 @@
 }
 
 @include breakpoint(small only) {
-  .docs-video-inner.playing .close-button {
-    display: block;
+  .docs-mobile-video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index:100;
   }
 }
 
 // Move the video for desktops
-@include breakpoint(large up) {
+@include breakpoint(medium up) {
   .docs-video-inner.is-stuck.autostick {
     position: fixed;
     z-index: 10000;

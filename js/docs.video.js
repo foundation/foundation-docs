@@ -65,8 +65,8 @@ if ($('#main-video').is('*')) {
     $videoOverlay.toggleClass('expanded');
   });
 
-  $('[data-open-video]').on('click', function() {
-    var time = $(this).data().openVideo;
+  var getSeconds = function(link) {
+    var time = $(link).data().openVideo;
     var sections = String(time).split(':');
     var seconds;
     if(sections.length > 1) { 
@@ -74,6 +74,21 @@ if ($('#main-video').is('*')) {
     } else {
       seconds = Number(sections[0]);
     }
+    return seconds;
+  }
+  var href = $('#docs-mobile-video-link').attr('href');
+  $('[data-open-video').each(function() {
+    var seconds = getSeconds(this);
+    this.href = href + '&time_continue=' + seconds;
+    this.target = '_blank';
+  });
+
+  $('[data-open-video]').on('click', function(e) {
+    if(Foundation.MediaQuery.is('small only')) {
+      return;
+    }
+    e.preventDefault();
+    var seconds = getSeconds(this)
     player.seekTo(seconds, true);
     player.playVideo();
     $videoOverlay.addClass('expanded');
