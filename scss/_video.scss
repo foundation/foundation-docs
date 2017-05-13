@@ -5,19 +5,21 @@
     position: absolute;
     color: $black;
     display: none;
-    top: 0;
+    top: -4px;
+    transform: translateY(-100%);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   .expand-contract {
     right: 30px;
-    font-size: 0.8rem;
-    cursor: pointer;
   }
 
   .close-button {
-    right: 4px;
-    top: 4px;
-    font-size: 0.8rem;
+    right: 0px;
   }
 }
 
@@ -43,22 +45,33 @@
     transform: none;
     width: 340px;
     border-radius: 0px;
-    // padding: 0 0.5rem;
     display: block;
-    padding: 20px;
-    background-color: #fff;
     .close-button, .expand-contract {
       display: block;
     }
+    .close-button {
+      background-image: url('../img/icons/docked-close-button.svg')
+    }
+    .expand-contract {
+      background-image: url('../img/icons/docked-expand-button.svg')
+    }
     &.expanded {
-      top: 10%;
+      top: 50%;
       bottom: auto;
       left: 50%;
       width: 640px;
-      transform: translateX(-50%);
+      transform: translate3d(-50%, -50%, 0);
       z-index:1001;
-      .expand-contract::before {
-        content: "\f10d";
+      .close-button, .expand-contract {
+        height: 30px;
+        width: 30px;
+      }
+      .close-button {
+        background-image: url('../img/icons/modal-close-button.svg');
+      }
+      .expand-contract {
+        background-image: url('../img/icons/modal-collapse-button.svg');
+        right: 40px;
       }
     }
   }
@@ -66,7 +79,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     width: 100vw;
     height: 100vh;
     z-index:1000;
@@ -83,7 +96,6 @@
     left: 0;
     top: 0;
     padding: 15px;
-    background-color: #fff;
     .close-button {
       font-size: 0.8rem;
       right: 4px;
