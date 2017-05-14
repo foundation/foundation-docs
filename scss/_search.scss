@@ -201,8 +201,14 @@
   margin-left: 1rem;
 }
 
-.linkedin-button {
-  vertical-align: text-bottom;
+.social-list {
+  .linkedin-button {
+    vertical-align: text-bottom;
+    display: none;
+    @include breakpoint(xlarge) {
+      display: inline-block;
+    }
+  }
 }
 
 .social-container {

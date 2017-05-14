@@ -76,7 +76,12 @@ $topbar-hover-color: darken($topbar-background, 20%);
   }
 
   .opens-right a {
-    padding-right: 1rem !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    @include breakpoint(large) {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
   }
 
   .opens-right a::after {
