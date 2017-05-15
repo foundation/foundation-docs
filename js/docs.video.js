@@ -49,8 +49,10 @@ if ($('#main-video').is('*')) {
  
     if (myScrollPosition > videoOffset) {
       $videoInner.addClass('is-stuck');
+      $videoOverlay.addClass('is-stuck');
     } else {
       $videoInner.removeClass('is-stuck');
+      $videoOverlay.removeClass('is-stuck');
     }
   });
 
