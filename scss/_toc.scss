@@ -3,6 +3,7 @@
 .docs-toc {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
+  padding-top: 2rem;
   border-bottom: 1px solid $medium-gray;
   font-size: 1rem;
 
@@ -14,7 +15,7 @@
   .menu > li > a {
     line-height: 1.5;
     padding: 0.45rem 1rem;
-    font-size: 14px;
+    font-size: 0.85rem;
   }
 
   .active {
@@ -95,12 +96,13 @@
   list-style: none;
 
   li {
-    padding: 0.45rem 0rem;
+    padding: 0.3rem 0rem;
   }
 
   li a {
     color: #939393;
     transition: color 0.35s ease;
+    font-size: 0.85rem;
   }
 
   li a:hover {
@@ -111,4 +113,9 @@
 
 .docs-toc-divider {
   border-bottom: 1px dashed #c3c3c3;
+  
+  &.small {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 }

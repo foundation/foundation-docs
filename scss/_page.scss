@@ -1,9 +1,10 @@
 // Styles specific to the main page content.
 
 .docs-page-title {
-  margin-top: 0.5rem;
+  margin-top: 2.2rem;
   display: inline-block;
   vertical-align: middle;
+  margin-bottom: 1.5rem;
 }
 
 .docs-page-lead {
@@ -38,6 +39,7 @@
 .docs-component-inner {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+  margin-bottom: 5rem;
 }
 
 .docs-component section {
