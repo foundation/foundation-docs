@@ -19,6 +19,7 @@ if ($('#main-video').is('*')) {
       height: '385',
       width: '690',
       videoId: videoId,
+      playerVars: {showinfo: '0'},
       events: {
         'onReady': onPlayerReady,
         'onStateChange': onPlayerStateChange
