@@ -3,6 +3,7 @@
 if ($('#main-video').is('*')) {
   var $videoOuter = $('#subpage-intro-video');
   var $videoInner = $videoOuter.find('.docs-video-inner');
+  var $videoOverlay = $videoOuter.find('.video-overlay');
   var videoId = $('#main-video').data().video;
   var tag = document.createElement('script');
 
@@ -34,11 +35,9 @@ if ($('#main-video').is('*')) {
   //    the player should play for six seconds and then stop.
   function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING) {
-      $videoInner.addClass('playing');
+      $videoInner.addClass('playing').addClass('autostick');
     } else {
-      if(!$videoInner.hasClass('is-stuck')) {
-        $videoInner.removeClass('playing');
-      }
+      $videoInner.removeClass('playing');
     }
   }
 
@@ -57,11 +56,17 @@ if ($('#main-video').is('*')) {
 
   $('[data-close-video]').on('click', function() {
     player.stopVideo();
-    $videoInner.removeClass('playing');
+    $videoInner.removeClass('autostick').removeClass('expanded');
+    $videoOverlay.removeClass('expanded');
   });
 
-  $('[data-open-video]').on('click', function() {
-    var time = $(this).data().openVideo;
+  $('[data-expand-contract-video]').on('click', function() {
+    $videoInner.toggleClass('expanded');
+    $videoOverlay.toggleClass('expanded');
+  });
+
+  var getSeconds = function(link) {
+    var time = $(link).data().openVideo;
     var sections = String(time).split(':');
     var seconds;
     if(sections.length > 1) { 
@@ -69,8 +74,25 @@ if ($('#main-video').is('*')) {
     } else {
       seconds = Number(sections[0]);
     }
+    return seconds;
+  }
+  var href = $('#docs-mobile-video-link').attr('href');
+  $('[data-open-video').each(function() {
+    var seconds = getSeconds(this);
+    this.href = href + '&time_continue=' + seconds;
+    this.target = '_blank';
+  });
+
+  $('[data-open-video]').on('click', function(e) {
+    if(Foundation.MediaQuery.is('small only')) {
+      return;
+    }
+    e.preventDefault();
+    var seconds = getSeconds(this)
     player.seekTo(seconds, true);
     player.playVideo();
+    $videoOverlay.addClass('expanded');
+    $videoInner.addClass('expanded').addClass('autostick');
   });
 
 }

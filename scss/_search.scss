@@ -201,6 +201,16 @@
   margin-left: 1rem;
 }
 
+.social-list {
+  .linkedin-button {
+    vertical-align: text-bottom;
+    display: none;
+    @include breakpoint(xlarge) {
+      display: inline-block;
+    }
+  }
+}
+
 .social-container {
   padding-top: 0.9rem;
 }
