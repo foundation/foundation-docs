@@ -8,16 +8,18 @@
   border-bottom: 1px solid $medium-gray;
   font-size: 1rem;
 
+  max-height: 100vh;
+  padding-bottom: 100px;
+  overflow-y: auto;
+  &.is-stuck {
+    width: 100%;
+  }
+
   @include breakpoint(large) {
     display: block !important;
     border-bottom: 0;
   }
 
-  .menu {
-    max-height: 100vh;
-    padding-bottom: 100px;
-    overflow-y: auto;
-  }
   .menu > li > a {
     line-height: 1.5;
     padding: 0.45rem 1rem;
