@@ -98,10 +98,10 @@ pre {
 }
 
 .docs-code-toggle {
-  display: inline;
+  display: inline-block;
   color: $primary-color;
   font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 
   &:focus {
     outline: none;
