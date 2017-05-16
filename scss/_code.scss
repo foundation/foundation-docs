@@ -21,8 +21,11 @@ pre {
 
 .docs-code.kitchen-sink {
   border: $code-border;
-  max-height: 300px;
-  overflow-y: scroll;
+  overflow: visible;
+  pre {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
   margin-bottom: 1rem;
 
   code {

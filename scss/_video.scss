@@ -43,10 +43,13 @@
     top: auto;
     bottom: 20px;
     transform: none;
-    width: 340px;
+    width: 200px;
     border-radius: 0px;
     display: block;
     box-shadow: 0 2px 20px 0 rgba(0,0,0,0.30);
+    @include breakpoint(xlarge) {
+      width: 340px;
+    }
     .close-button, .expand-contract {
       display: block;
     }
