@@ -20,7 +20,7 @@ $h2s.each(function() {
 // Initialize Magellan on the generated table of contents
 if ($toc.length) {
   if (typeof Foundation !== 'undefined') {
-    new Foundation.Magellan($toc, {barOffset: 80, deepLinking: true});
+    new Foundation.Magellan($toc, {barOffset: 80});
   }
 }
 
