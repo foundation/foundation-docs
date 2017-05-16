@@ -46,9 +46,10 @@ if ($('#main-video').is('*')) {
   
   $(window).on("scroll", function() {
     var videoOffset = $videoOuter.offset().top;
+    var videoHeight = $videoOuter.height();
     var myScrollPosition = $(this).scrollTop();
  
-    if (myScrollPosition > videoOffset) {
+    if (myScrollPosition > (videoOffset + videoHeight - 300)) {
       $videoInner.addClass('is-stuck');
       $videoOverlay.addClass('is-stuck');
     } else {
