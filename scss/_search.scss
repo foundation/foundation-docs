@@ -64,12 +64,12 @@
     border-bottom: none;
     box-shadow: none;
   }
-  
-  @include breakpoint(small down) { 
+
+  @include breakpoint(small down) {
     border: 0;
     border-top: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
-    
+
     &:focus {
       border: 0;
       border-top: 1px solid #e0e0e0;
@@ -148,7 +148,7 @@
 //  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
   border-bottom: 1px solid #e0e0e0;
   position: relative;
-  
+
 }
 
 .version-dropdown {
@@ -191,7 +191,7 @@
 }
 
 .version-dropdown-menu {
-  
+
 }
 
 .version-dropdown-menu-link {
@@ -203,17 +203,8 @@
 }
 
 .github-button {
-  margin-left: 1rem;
-}
-
-.social-list {
-  .linkedin-button {
-    vertical-align: text-bottom;
-    display: none;
-    @include breakpoint(xlarge) {
-      display: inline-block;
-    }
-  }
+  // margin-left: 1rem;
+  @include vertical-center;
 }
 
 .social-container {
@@ -224,9 +215,20 @@
   list-style: none;
   margin-bottom: 0;
 
+  position: absolute;
+  right: 0;
+  width: 102px;
+  height: 56px;
+  top: 3px;
+
   li {
     display: inline-block;
   }
+}
+
+.docs-search-wrapper {
+  position: relative;
+  padding-right: 139px !important;
 }
 
 .foundation-version-label {

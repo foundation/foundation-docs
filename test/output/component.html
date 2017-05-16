@@ -1,276 +1,336 @@
 <article class="docs-component" id="docs-component">
-  <a class="small secondary expanded button hide-for-medium" href="#docs-menu">Jump to Nav</a>
-  <header>
-    <h1 class="docs-page-title">Component</h1><span class="docs-js label" data-tooltip="" title="Requires a JavaScript library.">JavaScript</span>
-    <p class="lead docs-page-lead">This is a component page.</p>
-    <ul class="menu simple docs-contribute-menu">
-      <li>
-        <a href="https://github.com/zurb//edit//test/fixtures/component.md" target="_blank"><i class="fi-pencil"></i>Edit this Page</a>
-      </li>
-      <li>
-        <a href="https://github.com/zurb/undefined/issues/new?title=%5BComponent%5D%20ISSUE%20NAME%20HERE" target="_blank"><i class="fi-social-github"></i>Report a Bug</a>
-      </li>
-      <li>
-        <a href="http://foundation.zurb.com/forum" target="_blank"><i class="fi-comment"></i>Get Help</a>
-      </li>
-    </ul>
-  </header>
+
+<!--<a href="#docs-menu" class="small secondary button expanded hide-for-medium mobile-nav-button">Jump to Nav</a>-->
+
+
+<div class="row">
+
+<div class="large-9 columns docs-component-inner " id="docs">
+<div>
+<header>
+  <h1 class="docs-page-title">Component</h1>
+
+    <span data-tooltip title="Requires a JavaScript library." class="docs-js label">JavaScript</span>
+    <p class="docs-description">This is a component page.</p>
+
+  
+
+</header>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<div class="docs-code" data-docs-code><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Button<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre></div>
+
+<div class="docs-code-live"><button class="button" type="button">Button</a></div>
+
+<hr>
+<section>
+  <h2 id="sass-reference" class="docs-heading" data-magellan-target="sass-reference">Sass Reference<a class="docs-heading-icon" href="#sass-reference"></a></h2>
+
+  <section>
+    <h3 id="sass-variables" class="docs-heading">Variables<a class="docs-heading-icon" href="#sass-variables"></a></h3>
+
+    <p>The default styles of this component can be customized using these Sass variables in your project's <a href="sass.html#the-settings-file">settings file</a>.</p>
+
+    <table class="docs-variable-table">
+      <thead>
+        <tr><th>Name</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+      </thead>
+      <tr>
+        <td class="name"><code>$var-basic</code></td>
+        <td>Number</td>
+        <td class="number"><code>true</code></td>
+        <td><p>This is a basic variable.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="name"><code>$var-multi</code></td>
+        <td>Number or  List</td>
+        <td class="number | list"><code>10px</code></td>
+        <td><p>This is a variable with multiple types.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="name"><code>$var-map</code></td>
+        <td>Map</td>
+        <td class="map"><code>
+  one: true<br>
+  two: false<br>
+</code></td>
+        <td><p>This ia a map.</p>
+</td>
+      </tr>
+      <tr>
+        <td class="name"><code>$var-since</code></td>
+        <td>Number</td>
+        <td class="number"><code>10px</code></td>
+        <td><p>This is a variable with a changelog.</p>
+</td>
+      </tr>
+    </table>
+  </section>
+
   <hr>
-  <div class="row">
-    <div class="large-9 columns" id="docs">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <div class="docs-code" data-docs-code="">
-        <pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Button<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
+
+  <section>
+    <h3 id="sass-mixins" class="docs-heading">Mixins<a class="docs-heading-icon" href="#sass-mixins"></a></h3>
+
+    <p>We use these mixins to build the final CSS output of this component. You can use the mixins yourself to build your own class structure out of our components.</p>
+
+    
+    <section >
+      <h4 id="mixin-basic" class="docs-heading">mixin-basic<a class="docs-heading-icon" href="#mixin-basic"></a></h4>
+
+        <p class="docs-notice-added">Added in 6.2</p>
+
+
+      <div class="docs-code">
+        <pre><code>@<span class="hljs-keyword">include</span> mixin-basic(<span class="hljs-variable">$param1</span>, <span class="hljs-variable">$param2</span>, <span class="hljs-variable">$param3</span>) { }</code></pre>
       </div>
-      <div class="docs-code-live">
-        <button class="button" type="button">Button</button>
+
+      <p>This is a mixin.</p>
+
+
+        <p><strong>Aliases:</strong> <code>mixin-alias()</code></p>
+
+      <p><strong>Learn more:</strong> <a href="http://foundation.zurb.com/sites">Foundation for Sites</a></p>
+
+      <table class="docs-variable-table">
+        <thead>
+          <tr><th>Parameter</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+        </thead>
+        <tr>
+          <td><code>$param1</code></td>
+          <td>Boolean</td>
+          <td><code><span style="color: #999;">None</span></code></td>
+          <td><p>This is a required parameter.</p>
+</td>
+        </tr>
+        <tr>
+          <td><code>$param2</code></td>
+          <td>Boolean</td>
+          <td><code>false</code></td>
+          <td><p>This is a parameter with a default value.</p>
+</td>
+        </tr>
+        <tr>
+          <td><code>$param3</code></td>
+          <td>Number or List</td>
+          <td><code>10px</code></td>
+          <td><p>This is a parameter with multiple types.</p>
+</td>
+        </tr>
+      </table>
+    </section>
+
+    <hr>
+
+
+    
+    <section class="docs-deprecated">
+      <h4 id="mixin-deprecated" class="docs-heading">mixin-deprecated<a class="docs-heading-icon" href="#mixin-deprecated"></a></h4>
+
+
+        <p class="docs-notice-deprecated">Deprecated in This mixin was replaced by `mixin-basic()` in version 6.2, and will be removed in 6.2.</p>
+
+      <div class="docs-code">
+        <pre><code>@<span class="hljs-keyword">include</span> mixin-deprecated;</code></pre>
       </div>
+
+      <p>This is a deprecated mixin.</p>
+
+
+
+      
+
+    </section>
+
+    
+
+
+    
+  </section>
+
+  <hr>
+
+  <section>
+    <h3 id="sass-functions" class="docs-heading">Functions<a class="docs-heading-icon" href="#sass-functions"></a></h3>
+
+    
+    <section >
+      <h4 id="square" class="docs-heading">square<a class="docs-heading-icon" href="#square"></a></h4>
+
+
+
+      <div class="docs-code">
+        <pre><code>square(<span class="hljs-variable">$num</span>)</code></pre>
+      </div>
+
+      <p>Multiplies a number by itself.</p>
+
+
+      
+
+      <table class="docs-variable-table">
+        <thead>
+          <tr><th>Parameter</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+        </thead>
+        <tr>
+          <td><code>$num</code></td>
+          <td>Number</td>
+          <td><code><span style="color: #999;">None</span></code></td>
+          <td><p>Number to square.</p>
+</td>
+        </tr>
+      </table>
+    </section>
+
+    
+    
+  </section>
+
+</section>
+
+<hr>
+<section>
+  <h2 id="javascript-reference" class="docs-heading" data-magellan-target="javascript-reference">JavaScript Reference<a class="docs-heading-icon" href="#javascript-reference"></a></h2>
+
+  
+  <section>
+    <h3 id="js-module" class="docs-heading">Initializing<a class="docs-heading-icon" href="#js-module"></a></h3>
+
+    <p>The file <code>component.js</code> must be included in your JavaScript to use this plugin, along with <code>foundation.core.js</code>. <strong>This plugin also requires these utility libraries:</strong></p>
+
+    
+    <ul>
+      <li><code>foundation.core.js</code></li>
+    </ul>
+    
+
+  </section>
+  
+
+  <section>
+    <h3 id="js-class" class="docs-heading">Foundation.Plugin<a class="docs-heading-icon" href="#js-class"></a></h3>
+
+    <p>This is a class constructor.</p>
+
+
+    <div class="docs-code"><pre><code><span class="hljs-keyword">var</span> elem = <span class="hljs-keyword">new</span> Foundation.Plugin(element, options);</code></pre></div>
+
+      <p><strong>Fires these events:</strong>
+        init.zf.event:plugin
+      </p>
+
+    <table class="docs-variable-table">
+      <thead>
+        <tr><th>Name</th><th>Type</th><th>Description</th></tr>
+      </thead>
+      <tr>
+        <td><code>param1</code></td>
+        <td>object</td>
+        <td>This is a parameter.</td>
+      </tr>
+      <tr>
+        <td><code>param2</code></td>
+        <td>string</td>
+        <td>This is an optional parameter.</td>
+      </tr>
+      <tr>
+        <td><code>param3</code></td>
+        <td>boolean</td>
+        <td>This is an optional parameter with a default value.</td>
+      </tr>
+      <tr>
+        <td><code>param4</code></td>
+        <td>string</td>
+        <td>This is a parameter that accepts multiple types.</td>
+      </tr>
+    </table>
+  </section>
+
+  <hr>
+
+
+  <hr>
+
+  <section>
+    <h3 id="js-events" class="docs-heading">Events<a class="docs-heading-icon" href="#js-events"></a></h3>
+
+    <p>These events will fire from any element with a Component plugin attached.</p>
+
+    <table class="docs-variable-table">
+      <thead>
+        <tr><th>Name</th><th>Description</th></tr>
+      </thead>
+        <tr>
+          <td><code>plugin.zf.component</code></td>
+          <td>Fires if the target element has the class after a toggle.</td>
+        </tr>
+    </table>
+  </section>
+
+  <hr>
+
+  <section>
+    <h3 id="js-functions" class="docs-heading">Methods<a class="docs-heading-icon" href="#js-functions"></a></h3>
+
+    <section>
+      <h4 id="callbackfunction" class="docs-heading">callbackFunction<a class="docs-heading-icon" href="#callbackfunction"></a></h4>
+
+      <div class="docs-code">
+        <pre><code>$(<span class="hljs-string">'#element'</span>).foundation(<span class="hljs-string">'callbackFunction'</span>, cb);</code></pre>
+      </div>
+
+      <p>This is a function with a callback parameter.</p>
+
+
+
+      <table class="docs-variable-table">
+        <thead>
+          <tr><th>Name</th><th>Type</th><th>Description</th></tr>
+        </thead>
+        <tr>
+          <td><code>cb</code></td>
+          <td>callbackFunctionCallback</td>
+          <td>Callback to run.</td>
+        </tr>
+      </table>
+
       <hr>
-      <section>
-        <h2 class="docs-heading" data-magellan-target="sass-reference" id="sass-reference">Sass Reference<a class="docs-heading-icon" href="#sass-reference"></a></h2>
-        <section>
-          <h3 class="docs-heading" id="sass-variables">Variables<a class="docs-heading-icon" href="#sass-variables"></a></h3>
-          <p>The default styles of this component can be customized using these Sass variables in your project's <a href="sass.html#the-settings-file">settings file</a>.</p>
-          <table class="docs-variable-table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Default Value</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tr>
-              <td class="name"><code>$var-basic</code></td>
-              <td>Number</td>
-              <td class="number"><code>true</code></td>
-              <td>
-                <p>This is a basic variable.</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="name"><code>$var-multi</code></td>
-              <td>Number or List</td>
-              <td class="number | list"><code>10px</code></td>
-              <td>
-                <p>This is a variable with multiple types.</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="name"><code>$var-map</code></td>
-              <td>Map</td>
-              <td class="map"><code>one: true<br>
-              two: false<br></code></td>
-              <td>
-                <p>This ia a map.</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="name"><code>$var-since</code></td>
-              <td>Number</td>
-              <td class="number"><code>10px</code></td>
-              <td>
-                <p>This is a variable with a changelog.</p>
-              </td>
-            </tr>
-          </table>
-        </section>
-        <hr>
-        <section>
-          <h3 class="docs-heading" id="sass-mixins">Mixins<a class="docs-heading-icon" href="#sass-mixins"></a></h3>
-          <p>We use these mixins to build the final CSS output of this component. You can use the mixins yourself to build your own class structure out of our components.</p>
-          <section>
-            <h4 class="docs-heading" id="mixin-basic">mixin-basic<a class="docs-heading-icon" href="#mixin-basic"></a></h4>
-            <p class="docs-notice-added">Added in 6.2</p>
-            <div class="docs-code">
-              <pre><code>@<span class="hljs-keyword">include</span> mixin-basic(<span class="hljs-variable">$param1</span>, <span class="hljs-variable">$param2</span>, <span class="hljs-variable">$param3</span>) { }</code></pre>
-            </div>
-            <p>This is a mixin.</p>
-            <p><strong>Aliases:</strong> <code>mixin-alias()</code></p>
-            <p><strong>Learn more:</strong> <a href="http://foundation.zurb.com/sites">Foundation for Sites</a></p>
-            <table class="docs-variable-table">
-              <thead>
-                <tr>
-                  <th>Parameter</th>
-                  <th>Type</th>
-                  <th>Default Value</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
-              <tr>
-                <td><code>$param1</code></td>
-                <td>Boolean</td>
-                <td><code><span style="color: #999;">None</span></code></td>
-                <td>
-                  <p>This is a required parameter.</p>
-                </td>
-              </tr>
-              <tr>
-                <td><code>$param2</code></td>
-                <td>Boolean</td>
-                <td><code>false</code></td>
-                <td>
-                  <p>This is a parameter with a default value.</p>
-                </td>
-              </tr>
-              <tr>
-                <td><code>$param3</code></td>
-                <td>Number or List</td>
-                <td><code>10px</code></td>
-                <td>
-                  <p>This is a parameter with multiple types.</p>
-                </td>
-              </tr>
-            </table>
-          </section>
-          <hr>
-          <section class="docs-deprecated">
-            <h4 class="docs-heading" id="mixin-deprecated">mixin-deprecated<a class="docs-heading-icon" href="#mixin-deprecated"></a></h4>
-            <p class="docs-notice-deprecated">Deprecated in This mixin was replaced by `mixin-basic()` in version 6.2, and will be removed in 6.2.</p>
-            <div class="docs-code">
-              <pre><code>@<span class="hljs-keyword">include</span> mixin-deprecated;</code></pre>
-            </div>
-            <p>This is a deprecated mixin.</p>
-          </section>
-        </section>
-        <hr>
-        <section>
-          <h3 class="docs-heading" id="sass-functions">Functions<a class="docs-heading-icon" href="#sass-functions"></a></h3>
-          <section>
-            <h4 class="docs-heading" id="square">square<a class="docs-heading-icon" href="#square"></a></h4>
-            <div class="docs-code">
-              <pre><code>square(<span class="hljs-variable">$num</span>)</code></pre>
-            </div>
-            <p>Multiplies a number by itself.</p>
-            <table class="docs-variable-table">
-              <thead>
-                <tr>
-                  <th>Parameter</th>
-                  <th>Type</th>
-                  <th>Default Value</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
-              <tr>
-                <td><code>$num</code></td>
-                <td>Number</td>
-                <td><code><span style="color: #999;">None</span></code></td>
-                <td>
-                  <p>Number to square.</p>
-                </td>
-              </tr>
-            </table>
-          </section>
-        </section>
-      </section>
+    </section>
+    <section>
+      <h4 id="sincefunction" class="docs-heading">sinceFunction<a class="docs-heading-icon" href="#sincefunction"></a></h4>
+
+      <div class="docs-code">
+        <pre><code>$(<span class="hljs-string">'#element'</span>).foundation(<span class="hljs-string">'sinceFunction'</span>);</code></pre>
+      </div>
+
+      <p>This function was added in a specific version.</p>
+
+
+
+
       <hr>
-      <section>
-        <h2 class="docs-heading" data-magellan-target="javascript-reference" id="javascript-reference">JavaScript Reference<a class="docs-heading-icon" href="#javascript-reference"></a></h2>
-        <section>
-          <h3 class="docs-heading" id="js-module">Initializing<a class="docs-heading-icon" href="#js-module"></a></h3>
-          <p>The file <code>component.js</code> must be included in your JavaScript to use this plugin, along with <code>foundation.core.js</code>. <strong>This plugin also requires these utility libraries:</strong></p>
-          <ul>
-            <li><code>foundation.core.js</code></li>
-          </ul>
-        </section>
-        <section>
-          <h3 class="docs-heading" id="js-class">Foundation.Plugin<a class="docs-heading-icon" href="#js-class"></a></h3>
-          <p>This is a class constructor.</p>
-          <div class="docs-code">
-            <pre><code><span class="hljs-keyword">var</span> elem = <span class="hljs-keyword">new</span> Foundation.Plugin(element, options);</code></pre>
-          </div>
-          <p><strong>Fires these events:</strong> init.zf.event:plugin</p>
-          <table class="docs-variable-table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tr>
-              <td><code>param1</code></td>
-              <td>object</td>
-              <td>This is a parameter.</td>
-            </tr>
-            <tr>
-              <td><code>param2</code></td>
-              <td>string</td>
-              <td>This is an optional parameter.</td>
-            </tr>
-            <tr>
-              <td><code>param3</code></td>
-              <td>boolean</td>
-              <td>This is an optional parameter with a default value.</td>
-            </tr>
-            <tr>
-              <td><code>param4</code></td>
-              <td>string</td>
-              <td>This is a parameter that accepts multiple types.</td>
-            </tr>
-          </table>
-        </section>
-        <hr>
-        <hr>
-        <section>
-          <h3 class="docs-heading" id="js-events">Events<a class="docs-heading-icon" href="#js-events"></a></h3>
-          <p>These events will fire from any element with a Component plugin attached.</p>
-          <table class="docs-variable-table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tr>
-              <td><code>plugin.zf.component</code></td>
-              <td>Fires if the target element has the class after a toggle.</td>
-            </tr>
-          </table>
-        </section>
-        <hr>
-        <section>
-          <h3 class="docs-heading" id="js-functions">Methods<a class="docs-heading-icon" href="#js-functions"></a></h3>
-          <section>
-            <h4 class="docs-heading" id="callbackfunction">callbackFunction<a class="docs-heading-icon" href="#callbackfunction"></a></h4>
-            <div class="docs-code">
-              <pre><code>$(<span class="hljs-string">'#element'</span>).foundation(<span class="hljs-string">'callbackFunction'</span>, cb);</code></pre>
-            </div>
-            <p>This is a function with a callback parameter.</p>
-            <table class="docs-variable-table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Type</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
-              <tr>
-                <td><code>cb</code></td>
-                <td>callbackFunctionCallback</td>
-                <td>Callback to run.</td>
-              </tr>
-            </table>
-            <hr>
-          </section>
-          <section>
-            <h4 class="docs-heading" id="sincefunction">sinceFunction<a class="docs-heading-icon" href="#sincefunction"></a></h4>
-            <div class="docs-code">
-              <pre><code>$(<span class="hljs-string">'#element'</span>).foundation(<span class="hljs-string">'sinceFunction'</span>);</code></pre>
-            </div>
-            <p>This function was added in a specific version.</p>
-            <hr>
-          </section>
-          <section>
-            <h4 class="docs-heading" id="examplefunction">exampleFunction<a class="docs-heading-icon" href="#examplefunction"></a></h4>
-            <div class="docs-code">
-              <pre><code>$(<span class="hljs-string">'#element'</span>).foundation(<span class="hljs-string">'exampleFunction'</span>);</code></pre>
-            </div>
-            <p>This is a function with examples.</p>
-          </section>
-        </section>
-      </section><!-- <hr> -->
-      <!-- <section class="docs-building-blocks">
+    </section>
+    <section>
+      <h4 id="examplefunction" class="docs-heading">exampleFunction<a class="docs-heading-icon" href="#examplefunction"></a></h4>
+
+      <div class="docs-code">
+        <pre><code>$(<span class="hljs-string">'#element'</span>).foundation(<span class="hljs-string">'exampleFunction'</span>);</code></pre>
+      </div>
+
+      <p>This is a function with examples.</p>
+
+
+
+
+      
+    </section>
+  </section>
+</section>
+
+<!-- <hr> -->
+<!-- <section class="docs-building-blocks">
   <h2 id="building-blocks" class="docs-heading" data-magellan-target="building-blocks">Building Blocks<a class="docs-heading-icon" href="#building-blocks"></a></h2>
 
   <p><a href="http://zurb.com/building-blocks">Building Blocks</a> is a ZURB-curated resource with useful code snippets that use Foundation components. Here are a few for this component:</p>
@@ -281,15 +341,30 @@
 
   <div data-building-blocks></div>
 </section> -->
-    </div>
-    <div class="large-3 columns" data-sticky-container="">
-      <nav class="columns docs-toc-wrap" data-anchor="docs" data-sticky="" data-sticky-on="large">
-        <div class="docs-toc hide" id="docsTOC">
-          <ul class="vertical menu" data-docs-toc="">
-            <li class="docs-nav-title">On this page:</li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+</div>
+</div>
+
+<div class="large-3 columns show-for-medium">
+<nav class="docs-toc-wrap" id="docsToc" data-sticky-container>
+  <div class="docs-toc hide" id="docsTOC" data-sticky data-margin-top="6" data-anchor="docs">
+    <ul class="vertical menu" data-docs-toc>
+      <li class="docs-nav-title">Component</li>
+    </ul>
+
+    <hr class="docs-toc-divider small">
+
+    <ul class="docs-contribute-menu">
+      <li><a href="https://github.com/zurb//edit//test/fixtures/component.md" target="_blank"><i class="fi-pencil"></i>Edit this Page</a></li>
+      <li><a href="https://github.com/zurb/undefined/issues/new?title=%5BComponent%5D%20ISSUE%20NAME%20HERE" target="_blank"><i class="fi-social-github"></i>Report a Bug</a></li>
+        <li><a href="http://foundation.zurb.com/forum?search=Component" target="_blank"><i class="fi-comment"></i>Get Help</a></li>
+    </ul>
   </div>
+
+</nav>
+
+
+</div>
+
+</div>
+
 </article>
