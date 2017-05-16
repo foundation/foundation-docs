@@ -44,7 +44,7 @@ if ($('#main-video').is('*')) {
       height: '385',
       width: '690',
       videoId: videoId,
-      mainPlayerVars: {showinfo: '0'},
+      playerVars: {showinfo: '0'},
       events: {
         'onReady': onPlayerReady,
         'onStateChange': onPlayerStateChange
