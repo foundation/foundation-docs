@@ -1,5 +1,29 @@
-// 2. This code loads the IFrame Player API code asynchronously.
+// From http://stackoverflow.com/questions/979975/how-to-get-the-value-from-the-get-parameters
 
+var QueryString = function () {
+  // This function is anonymous, is executed immediately and 
+  // the return value is assigned to QueryString!
+  var query_string = {};
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+        // If first entry with this name
+    if (typeof query_string[pair[0]] === "undefined") {
+      query_string[pair[0]] = decodeURIComponent(pair[1]);
+        // If second entry with this name
+    } else if (typeof query_string[pair[0]] === "string") {
+      var arr = [ query_string[pair[0]],decodeURIComponent(pair[1]) ];
+      query_string[pair[0]] = arr;
+        // If third or later entry with this name
+    } else {
+      query_string[pair[0]].push(decodeURIComponent(pair[1]));
+    }
+  }
+  return query_string;
+}();
+
+// 2. This code loads the IFrame Player API code asynchronously.
 if ($('#main-video').is('*')) {
   var $videoOuter = $('#subpage-intro-video');
   var $videoInner = $videoOuter.find('.docs-video-inner');
@@ -11,29 +35,55 @@ if ($('#main-video').is('*')) {
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-  // 3. This function creates an <iframe> (and YouTube player)
+  // 3. This function creates an <iframe> (and YouTube mainPlayer)
   //    after the API code downloads.
-  var player;
+  var mainPlayer, embeddedPlayers = [];
+
   function onYouTubeIframeAPIReady() {
-    player = new YT.Player('main-video', {
+    mainPlayer = new YT.Player('main-video', {
       height: '385',
       width: '690',
       videoId: videoId,
-      playerVars: {showinfo: '0'},
+      mainPlayerVars: {showinfo: '0'},
       events: {
         'onReady': onPlayerReady,
         'onStateChange': onPlayerStateChange
       }
     });
+
+    $('[data-linkable-video]').each(function() {
+      var $vid= $(this);
+      var id = this.id;
+      var videoId = $vid.data().linkableVideo;
+      embeddedPlayers.push({id: id, video: videoId, player: new YT.Player(id, {
+        events: {
+          'onReady': onPlayerReady
+        }
+      })});
+    });
   }
 
-  // 4. The API will call this function when the video player is ready.
+  // 4. The API will call this function when the video mainPlayer is ready.
   function onPlayerReady(event) {
+    if(QueryString.video == videoId) {
+      mainPlayer.playVideo();
+    } else if(QueryString.video) {
+      for(var i = 0; i < embeddedPlayers.length; i++) {
+        if(QueryString.video == embeddedPlayers[i].video) {
+          $(window).scrollTop($('#' + embeddedPlayers[i].id).offset() - 200);
+          embeddedPlayers[i].player.playVideo();
+
+          // Don't show the main vid if we're autoplaying a different one.
+          $videoInner.removeClass('autostick').removeClass('expanded');
+          $videoOverlay.removeClass('expanded');
+        }
+      }
+    }
   }
 
-  // 5. The API calls this function when the player's state changes.
+  // 5. The API calls this function when the mainPlayer's state changes.
   //    The function indicates that when playing a video (state=1),
-  //    the player should play for six seconds and then stop.
+  //    the mainPlayer should play for six seconds and then stop.
   function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING) {
       $videoInner.addClass('playing').addClass('autostick');
@@ -59,7 +109,7 @@ if ($('#main-video').is('*')) {
   });
 
   $('[data-close-video]').on('click', function() {
-    player.stopVideo();
+    mainPlayer.stopVideo();
     $videoInner.removeClass('autostick').removeClass('expanded');
     $videoOverlay.removeClass('expanded');
   });
@@ -93,10 +143,10 @@ if ($('#main-video').is('*')) {
     }
     e.preventDefault();
     var seconds = getSeconds(this)
-    player.seekTo(seconds, true);
-    player.playVideo();
+    mainPlayer.seekTo(seconds, true);
+    mainPlayer.playVideo();
     $videoOverlay.addClass('expanded');
     $videoInner.addClass('expanded').addClass('autostick');
   });
-
 }
+
