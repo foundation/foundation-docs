@@ -81,7 +81,7 @@ if ($('#main-video').is('*')) {
     return seconds;
   }
   var href = $('#docs-mobile-video-link').attr('href');
-  $('[data-open-video').each(function() {
+  $('[data-open-video]').each(function() {
     var seconds = getSeconds(this);
     this.href = href + '&time_continue=' + seconds;
     this.target = '_blank';
