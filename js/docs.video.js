@@ -70,12 +70,12 @@ if ($('#main-video').is('*')) {
     } else if(QueryString.video) {
       for(var i = 0; i < embeddedPlayers.length; i++) {
         if(QueryString.video == embeddedPlayers[i].video) {
-          $(window).scrollTop($('#' + embeddedPlayers[i].id).offset() - 200);
-          embeddedPlayers[i].player.playVideo();
+          $(window).scrollTop($('#' + embeddedPlayers[i].id).offset().top - 200);
 
           // Don't show the main vid if we're autoplaying a different one.
           $videoInner.removeClass('autostick').removeClass('expanded');
           $videoOverlay.removeClass('expanded');
+          embeddedPlayers[i].player.playVideo();
         }
       }
     }
