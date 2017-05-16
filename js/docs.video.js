@@ -133,7 +133,7 @@ if ($('#main-video').is('*')) {
   var href = $('#docs-mobile-video-link').attr('href');
   $('[data-open-video]').each(function() {
     var seconds = getSeconds(this);
-    this.href = href + '&time_continue=' + seconds;
+    this.href = href + '&t=' + seconds;
     this.target = '_blank';
   });
 
