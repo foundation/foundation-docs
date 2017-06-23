@@ -21,8 +21,11 @@ pre {
 
 .docs-code.kitchen-sink {
   border: $code-border;
-  max-height: 300px;
-  overflow-y: scroll;
+  overflow: visible;
+  pre {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
   margin-bottom: 1rem;
 
   code {
@@ -98,10 +101,10 @@ pre {
 }
 
 .docs-code-toggle {
-  display: inline;
+  display: inline-block;
   color: $primary-color;
   font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 
   &:focus {
     outline: none;

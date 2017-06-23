@@ -4498,7 +4498,7 @@ tar@^2.0.0, tar@~2.2.1:
     fstream "^1.0.2"
     inherits "2"
 
-tbg-foundation-sites@^6.2.0:
+tbg-foundation-sites@^6.3.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/tbg-foundation-sites/-/tbg-foundation-sites-6.3.0.tgz#b803b76f8b12ba9e40db18877053214fc9ae8333"
   dependencies:

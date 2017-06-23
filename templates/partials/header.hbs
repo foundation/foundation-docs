@@ -16,12 +16,20 @@
   {{#if tbg}}
     <span data-tooltip title="Customization by The Berndt Group" class="docs-tbg label">TBG</span>
   {{/if}}
+  {{#if description}}
+    <p class="docs-description lead">{{description}}</p>
+  {{/if}}
 
-  <p class="lead docs-page-lead">{{ description }}</p>
+  {{#if video}}<div id="subpage-intro-video" class="subpage-intro-video">
+    <div class="docs-video-inner autostick">
+      <span class="expand-contract" data-expand-contract-video></span>
+      <span class="close-button" data-close-video></span>
+      <div class="responsive-embed widescreen">
+        <div id="main-video" data-video="{{video}}"></div>
+        <a id="docs-mobile-video-link" class="docs-mobile-video" target="_blank" href="https://www.youtube.com/watch?v={{video}}"></a>
+      </div>
+    </div>
+    <div class="video-overlay" data-close-video></div>
+  </div>{{/if}}
 
-  <ul class="menu simple docs-contribute-menu">
-    <li><a href="{{ editLink repoName editBranch fileName }}" target="_blank"><i class="fi-pencil"></i>Edit this Page</a></li>
-    <li><a href="{{#if library}}{{ library.github }}/issues{{else}}{{ issueLink repoName title }}{{/if}}" target="_blank"><i class="fi-social-github"></i>Report a Bug</a></li>
-    <li><a href="http://foundation.zurb.com/forum" target="_blank"><i class="fi-comment"></i>Get Help</a></li>
-  </ul>
 </header>

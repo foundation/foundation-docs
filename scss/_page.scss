@@ -1,21 +1,59 @@
 // Styles specific to the main page content.
 
 .docs-page-title {
-  margin-top: 0.5rem;
+  margin-top: 2.2rem;
   display: inline-block;
   vertical-align: middle;
+  margin-bottom: 0;
 }
 
 .docs-page-lead {
   margin-bottom: 0.5rem;
 }
 
+.docs-description {
+  margin-bottom: 2.2rem;
+}
+
+.docs-off-canvas-content {
+  position: relative;
+  padding-top: 100px;
+}
+
+.docs-sticky-top-bar {
+  width: 100%;
+  background-color: $white;
+  margin-top: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transition: transform 0.4s;
+  @include breakpoint(small only) {
+    &.mobile-hidden {
+      transform: translateY(-100%);
+    }
+  }
+}
+.off-canvas {
+  z-index: 11;
+}
+
+.docs-component-inner {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 5rem;
+}
+
 .docs-component section {
   position: relative;
+  overflow-x: auto;
 }
 
 .docs-component hr {
   max-width: none;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .docs-component .thumbnail {
@@ -26,4 +64,11 @@
 
 .docs-component .callout code {
   background: rgba($code-background, 0.5);
+}
+
+.subpage-intro-video {
+  min-height: 225px;
+  @include breakpoint(medium) {
+    min-height: 475px;
+  }
 }

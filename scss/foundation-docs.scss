@@ -18,6 +18,8 @@
 @import 'label';
 @import 'studios-callout';
 @import 'announcement';
+@import 'header';
+@import 'video';
 
 .menu-group {
   @include clearfix;
@@ -27,7 +29,7 @@
 }
 
 .sticky-mag {
-  background-color: white;
+  background-color: $white;
 
   &.stuck-mag {
     border-bottom: 2px solid #121212;

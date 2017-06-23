@@ -1,11 +1,19 @@
 // Component navigation menu seen on every page.
 
-.docs-nav.menu {
-  margin-top: 0.5rem;
-  background: #fafafa;
+.docs-nav {
+  overflow: auto;
+  height: calc(100vh);
+  background: #f7f7f7;
   padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 100px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
 
+  @include breakpoint(small only) {
+    height: auto;
+  }
+  
   li small {
     color: #999;
     text-transform: uppercase;
@@ -36,6 +44,9 @@
     padding: 0.22222rem 0.44444rem 0.22222rem;
     font-size: 0.61111rem;
   }
+}
+.docs-nav-container.is-stuck{
+  width: 100%;
 }
 
 .docs-nav-title {
