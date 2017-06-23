@@ -1,6 +1,6 @@
 {
   "name": "tbg-foundation-docs",
-  "version": "0.2.1-rc.3",
+  "version": "0.2.1",
   "description": "Common templates and utilities for the Foundation family documentation. Forked by The Berndt Group for tbg-foundation-sites",
   "main": "index.js",
   "scripts": {
