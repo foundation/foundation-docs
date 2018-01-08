@@ -1,20 +1,32 @@
 <section>
   {{#heading 2}}JavaScript Reference{{/heading}}
 
-  {{#if js.module}}{{#with js.module.[0]}}
   <section>
     {{#heading 3 'js-module'}}Initializing{{/heading}}
 
-    <p>The file <code>{{meta.filename}}</code> must be included in your JavaScript to use this plugin, along with <code>foundation.core.js</code>.{{#if requires}} <strong>This plugin also requires these utility libraries:</strong>{{/if}}</p>
+    <p>
+      The following files must be included in your JavaScript to use this plugin:
+      <ul>
+        <li><code>foundation.core.js</code></li>
 
-    {{#if requires}}{{#each requires}}
-    <ul>
-      <li><code>{{formatJsModule this}}</code></li>
-    </ul>
-    {{/each}}{{/if}}
+        {{#each js.module as |module|}}
+        <li>
+          <code>{{module.meta.filename}}</code>
+
+          {{#if module.requires}}
+          <ul>
+            {{#each module.requires as |submodule|}}
+            <li>With utility library <code>{{formatJsModule submodule}}</code></li>
+            {{/each}}
+          </ul>
+          {{/if}}
+
+        </li>
+        {{/each}}
+      </ul>
+    </p>
 
   </section>
-  {{/with}}{{/if}}
 
   {{#each js.class}}
   <section>
