@@ -1,7 +1,10 @@
 var expect = require('chai').expect;
 var sass = require('node-sass');
 
-describe('Sass', () => {
+describe('Sass', function() {
+  // Limit compilation time to 10s
+  this.timeout(10000);
+
   it('compiles without errors', done => {
     sass.render({
       file: 'test/visual/docs.scss',
