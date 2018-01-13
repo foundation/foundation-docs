@@ -22,6 +22,9 @@
     "url": "https://github.com/zurb/foundation-docs/issues"
   },
   "homepage": "https://github.com/zurb/foundation-docs#readme",
+  "engines": {
+    "node": ">=4"
+  },
   "dependencies": {
     "cheerio": "^0.20.0",
     "handlebars": "^3.0.1",
