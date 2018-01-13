@@ -147,7 +147,7 @@ describe('Handlebars Helpers', () => {
     describe('{{formatJsOptionValue}}', () => {
       it('prints non-String values as-is', () => {
         var data = {
-          value: ['0']
+          value: '0'
         };
 
         compare('{{formatJsOptionValue value}}', '0', data);
@@ -155,8 +155,8 @@ describe('Handlebars Helpers', () => {
 
       it('prints String values without the quotes on either side', () => {
         var data = {
-          singleQuotes: ["'value'"],
-          multiQuotes: ['"value"']
+          singleQuotes: "'value'",
+          multiQuotes: '"value"'
         };
 
         compare(`{{formatJsOptionValue singleQuotes}}`, 'value', data);
