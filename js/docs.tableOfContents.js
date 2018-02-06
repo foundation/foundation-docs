@@ -17,13 +17,6 @@ $h2s.each(function() {
   $toc.append('<li><a href="'+anchor+'">'+text+'</a></li>');
 });
 
-// Initialize Magellan on the generated table of contents
-if ($toc.length) {
-  if (typeof Foundation !== 'undefined') {
-    new Foundation.Magellan($toc, {offset: 130});
-  }
-}
-
 }();
 
 //var $window = $(window);
