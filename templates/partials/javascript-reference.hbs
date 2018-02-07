@@ -63,7 +63,7 @@
 
   <hr>
 
-  {{#if js.member}}
+  {{#if (hasContent js.member)}}
   <section>
     {{#heading 3 'js-options'}}Plugin Options{{/heading}}
 
@@ -92,7 +92,7 @@
 
   <hr>
 
-  {{#if js.event}}
+  {{#if (hasContent js.event)}}
   <section>
     {{#heading 3 'js-events'}}Events{{/heading}}
 
@@ -114,7 +114,7 @@
 
   <hr>
 
-  {{#if js.function}}
+  {{#if (hasContent js.function)}}
   <section>
     {{#heading 3 'js-functions'}}Methods{{/heading}}
 
