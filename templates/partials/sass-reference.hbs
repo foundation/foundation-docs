@@ -1,7 +1,7 @@
 <section>
   {{#heading 2}}Sass Reference{{/heading}}
 
-  {{#if sass.variable}}
+  {{#if (hasContent sass.variable)}}
   <section>
     {{#heading 3 'sass-variables'}}Variables{{/heading}}
 
@@ -23,7 +23,7 @@
   </section>
   {{/if}}
 
-  {{#if sass.mixin}}
+  {{#if (hasContent sass.mixin)}}
   {{#if sass.variable}}<hr>{{/if}}
 
   <section>
@@ -82,7 +82,7 @@
   </section>
   {{/if}}
 
-  {{#if sass.function}}
+  {{#if (hasContent sass.function)}}
   <hr>
 
   <section>
