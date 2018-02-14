@@ -104,7 +104,7 @@
       </thead>
       {{#each js.event}}
         <tr>
-          <td><code>{{formatJsEventName this.name ../title}}</code></td>
+          <td><code>{{formatJsEventName this.name this.memberof}}</code></td>
           <td>{{this.description}}</td>
         </tr>
       {{/each}}
