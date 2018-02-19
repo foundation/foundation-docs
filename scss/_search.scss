@@ -204,6 +204,7 @@
 
 .github-button {
   // margin-left: 1rem;
+  font-size: 0;
   @include vertical-center;
 }
 
@@ -218,8 +219,8 @@
   position: absolute;
   right: 0;
   width: 102px;
-  height: 56px;
-  top: 3px;
+  height: 100%;
+  //top: 0;
 
   li {
     display: inline-block;
