@@ -203,8 +203,7 @@
 }
 
 .github-button {
-  // margin-left: 1rem;
-  font-size: 0;
+  font-size: 0; // trick to hide the space of the inline-block element
   @include vertical-center;
 }
 
@@ -220,7 +219,6 @@
   right: 0;
   width: 102px;
   height: 100%;
-  //top: 0;
 
   li {
     display: inline-block;
