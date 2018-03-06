@@ -40,7 +40,7 @@ gulp.task('sass', function() {
     .pipe($.sass({
       includePaths: [
         'scss',
-        'node_modules/foundation-sites/scss',
+        'node_modules/tbg-foundation-sites/scss',
         'node_modules/motion-ui/src'
       ]
     }).on('error', $.sass.logError))

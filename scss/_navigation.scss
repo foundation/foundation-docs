@@ -43,6 +43,11 @@
     margin-left: 5px;
     padding: 0.22222rem 0.44444rem 0.22222rem;
     font-size: 0.61111rem;
+    
+    &.tbg {
+      background: #ff8f00;
+      color: #fff;
+    }
   }
 }
 .docs-nav-container.is-stuck{
