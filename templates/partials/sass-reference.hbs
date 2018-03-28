@@ -15,7 +15,7 @@
       <tr>
         <td class="name"><code>${{this.context.name}}</code></td>
         <td>{{formatSassTypes this.type}}</td>
-        <td class="{{toLower this.type}}"><code>{{formatSassValue this.context.value}}</code></td>
+        <td class="zf-docs-type-{{toLower this.type}}"><code>{{formatSassValue this.context.value}}</code></td>
         <td>{{md this.description}}</td>
       </tr>
       {{/each}}
