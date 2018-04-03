@@ -15,7 +15,7 @@ $('[data-docs-code]').each(function(index, value) {
 
   $(this).prepend($button);
 
-  var clipboard = new Clipboard('#' + copyBtnId, {
+  var clipboard = new ClipboardJS('#' + copyBtnId, {
     text: function() {
         return text;
     }
