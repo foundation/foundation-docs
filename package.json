@@ -21,21 +21,21 @@
   },
   "homepage": "https://github.com/zurb/foundation-docs#readme",
   "dependencies": {
-    "handlebars": "^3.0.1",
+    "handlebars": "^4.0.12",
     "highlight.js": "^9.0.0",
     "inky": "^1.0.0-rc.1",
     "js-beautify": "^1.6.2",
     "kebab-case": "^1.0.0",
-    "marked": "^0.3.5",
+    "marked": "^0.5.0",
     "multiline": "^1.0.2",
     "querystring": "^0.2.0",
-    "require-dir": "^0.3.0",
-    "string-template": "^0.2.1",
-    "strip-indent": "^1.0.1"
+    "require-dir": "^1.0.0",
+    "string-template": "^1.0.0",
+    "strip-indent": "^2.0.0"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^2.4.5",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
     "supercollider": "^1.2.0"
   }
 }
