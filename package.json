@@ -27,7 +27,7 @@
     "npm": ">=2.14.2"
   },
   "dependencies": {
-    "cheerio": "^0.20.0",
+    "cheerio": "^1.0.0-rc.2",
     "handlebars": "^4.0.12",
     "highlight.js": "^9.0.0",
     "inky": "^1.2.6",
@@ -53,13 +53,13 @@
     "gulp-concat": "^2.6.0",
     "gulp-load-plugins": "^1.2.0",
     "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^4.0.1",
     "mocha": "^5.2.0",
-    "motion-ui": "^1.2.2",
-    "node-sass": "v4.7.2",
+    "motion-ui": "^2.0.3",
+    "node-sass": "^4.9.3",
     "panini": "^1.2.0",
     "rimraf": "^2.5.2",
-    "striptags": "^2.1.1",
+    "striptags": "^3.1.1",
     "supercollider": "^1.4.4"
   }
 }
