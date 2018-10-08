@@ -53,18 +53,26 @@ gulp.task('sass', function() {
 });
 
 gulp.task('javascript', function() {
-  gulp.src('js/**/*.js')
+  return gulp.src('js/**/*.js')
     .pipe($.concat('docs.js'))
     .pipe(gulp.dest('test/visual/_build'));
 });
 
-// Creates a server and watches for file changes
-gulp.task('default', ['pages', 'sass', 'javascript'], function() {
-  browser.init({
-    server: 'test/visual/_build'
-  });
+// Build everything
+gulp.task('build', gulp.parallel('pages', 'sass', 'javascript'));
 
-  gulp.watch(['text/fixtures/**/*', 'test/visual/**/*.html'], ['pages']);
-  gulp.watch(['scss/**/*', 'test/visual/docs.scss'], ['sass']);
-  gulp.watch(['js/**/*'], ['javascript']);
+// Create a server for visual tests
+gulp.task('serve', function (done) {
+  browser.init({ server: 'test/visual/_build' });
+  done();
 });
+
+// Watch for changes and re-trigger the build
+gulp.task('watch', function() {
+  gulp.watch(['text/fixtures/**/*', 'test/visual/**/*.html'], gulp.series('pages'));
+  gulp.watch(['scss/**/*', 'test/visual/docs.scss'], gulp.series('sass'));
+  gulp.watch(['js/**/*'], gulp.series('javascript'));
+});
+
+// Creates a server and watches for file changes
+gulp.task('default', gulp.series('build', 'serve', 'watch'));
