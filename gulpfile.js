@@ -4,6 +4,7 @@ var docs = require('./index');
 var gulp = require('gulp');
 var panini = require('panini');
 var supercollider = require('supercollider');
+var autoprefixer = require('autoprefixer');
 
 // Supercollider configuration
 supercollider
@@ -44,9 +45,9 @@ gulp.task('sass', function() {
         'node_modules/motion-ui/src'
       ]
     }).on('error', $.sass.logError))
-    .pipe($.autoprefixer({
-      browsers: ['last 2 versions', 'ie >= 9']
-    }))
+    .pipe($.postcss([
+      autoprefixer() // uses ".browserslistrc"
+    ]))
     .pipe(gulp.dest('test/visual/_build'))
     .pipe(browser.reload({ stream: true }));
 });
