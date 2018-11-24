@@ -7,12 +7,17 @@
 var $h2s = $('.docs-component h2');
 var $toc = $('[data-docs-toc]');
 
-$h2s.each(function() {
+$h2s.each(function () {
+  var $title = $(this);
   // Ignore <h2>s inside of a rendered code sample
-  if ($(this).parents('.docs-code-live').length) return;
+  if ($title.parents('.docs-code-live').length) return;
 
-  var text = $(this).text();
-  var anchor = $(this).children('a').attr('href');
+  // Get the text in the title without the nested HTML
+  // https://stackoverflow.com/a/33592275
+  var $topLevelTitle = $title.clone().children().remove().end();
+  var text = $topLevelTitle.text();
+
+  var anchor = $title.children('a').attr('href');
 
   $toc.append('<li><a href="'+anchor+'">'+text+'</a></li>');
 });
