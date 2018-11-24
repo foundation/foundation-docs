@@ -58,4 +58,19 @@ describe('Utilities', function() {
       expect(heading).to.contain('href="#custom-anchor"');
     });
   });
+
+  describe('topText', function() {
+    var topText = require('../../lib/util/topText');
+
+    it('returns the top-level text of the given HTML string', function() {
+      var text1 = topText('Lorem <p>ipsum</p> dolor <i>sit</i> amet');
+      var text2 = topText('Lorem <p>ipsum <i>dolor</i> sit</p> amet');
+      var text3 = topText('<p>Lorem ipsum</p> dolor sit <i>amet</i>');
+
+      expect(text1).to.equal('Lorem  dolor  amet');
+      expect(text2).to.equal('Lorem  amet');
+      expect(text3).to.equal(' dolor sit ');
+    });
+
+  });
 });
