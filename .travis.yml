@@ -1,7 +1,16 @@
 language: node_js
+cache: yarn
+
 node_js:
-  - "lts/boron"
-  - "lts/carbon"
-  - "stable"
-before_install: npm install -g npm@latest
-install: npm ci
+  - 6
+  - 8
+  - 10
+  - node
+
+env:
+  - YARN_GPG=no
+
+install: yarn
+
+notifications:
+  email: false
