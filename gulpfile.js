@@ -18,7 +18,7 @@ supercollider
   .adapter('js')
 
 // Generates a documentation page
-gulp.task('pages', function() {
+gulp.task('pages', function(done) {
   panini.refresh();
 
   return gulp.src('test/fixtures/*.md')
@@ -31,7 +31,7 @@ gulp.task('pages', function() {
     .pipe(gulp.dest('test/visual/_build'))
     .on('finish', function() {
       browser.reload();
-      supercollider.buildSearch('test/visual/_build/data/search.json', function(){});
+      supercollider.buildSearch('test/visual/_build/data/search.json', done);
     });
 });
 
