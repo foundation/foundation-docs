@@ -31,7 +31,7 @@ gulp.task('pages', function() {
     .pipe(gulp.dest('test/visual/_build'))
     .on('finish', function() {
       browser.reload();
-      supercollider.buildSearch('test/visual/_build/data/search.json');
+      supercollider.buildSearch('test/visual/_build/data/search.json', function(){});
     });
 });
 
