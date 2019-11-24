@@ -1,7 +1,7 @@
 .welcome-hero {
   background-color: $primary-color;
   padding: 2rem;
-  font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
+  font-family:  Helvetica, Arial, sans-serif;
 
   .welcome-hero-content {
     display: flex;
@@ -42,7 +42,7 @@
     color: $white;
     line-height: 3.2rem;
     margin-bottom: 1rem;
-    font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
 
     @include breakpoint(small down) {
       font-size: 2rem;

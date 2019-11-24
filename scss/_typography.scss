@@ -1,5 +1,3 @@
-// Specific text uses Proxima Nova instead of the framework's default of Helvetica Neue. We should only apply Proxima Nova to docs-specific elements, like section titles, and never to elements of the framework itself.
-
 .docs-header,
 .docs-site-title,
 .docs-page-title,
@@ -13,7 +11,7 @@
 .twitter-typeahead,
 .banner-info,
 .banner-info h3 {
-  font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 a > code {
