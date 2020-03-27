@@ -192,7 +192,7 @@ describe('Handlebars Helpers', () => {
   describe('Links', () => {
     describe('{{editLink}}', () => {
       it('generates a GitHub edit link point to a repository, branch, and file', () => {
-        compare('{{editLink "foundation-sites" "master" "docs/pages/index.html"}}', 'https://github.com/zurb/foundation-sites/edit/master/docs/pages/index.md');
+        compare('{{editLink "foundation-sites" "master" "docs/pages/index.html"}}', 'https://github.com/foundation/foundation-sites/edit/master/docs/pages/index.md');
       });
     });
 
@@ -201,7 +201,7 @@ describe('Handlebars Helpers', () => {
         var template = Handlebars.compile('{{issueLink "foundation-sites" "Plugin"}}');
         var output = template();
 
-        expect(output, 'links to GitHub issue tracker').to.contain('https://github.com/zurb/foundation-sites/issues/new?title');
+        expect(output, 'links to GitHub issue tracker').to.contain('https://github.com/foundation/foundation-sites/issues/new?title');
         expect(output, 'includes tag in preset title').to.contain('Plugin');
         expect(output, 'includes super loud title that you should replace').to.contain('ISSUE%20NAME%20HERE');
       });
