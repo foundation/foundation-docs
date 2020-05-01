@@ -6,7 +6,9 @@
   "scripts": {
     "test": "npm run test:unit",
     "test:unit": "mocha test/unit/*.js --compilers js:@babel/register",
-    "test:visual": "gulp"
+    "test:visual": "gulp",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -41,7 +43,8 @@
     "querystring": "^0.2.0",
     "require-dir": "^1.0.0",
     "string-template": "^1.0.0",
-    "strip-indent": "^2.0.0"
+    "strip-indent": "^2.0.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -63,5 +66,6 @@
     "rimraf": "^2.5.2",
     "striptags": "^3.1.1",
     "supercollider": "^1.4.5"
-  }
+  },
+  "snyk": true
 }
