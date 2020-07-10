@@ -33,7 +33,7 @@
     "inky": "^1.2.6",
     "js-beautify": "^1.6.2",
     "kebab-case": "^1.0.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.16",
     "lodash.template": "^4.5.0",
     "marked": "^0.6.1",
     "mkdirp": "^0.5.1",
