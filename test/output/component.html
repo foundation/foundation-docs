@@ -11,7 +11,7 @@
   <h1 class="docs-page-title">Component</h1>
 
     <span data-tooltip title="Requires a JavaScript library." class="docs-js label">JavaScript</span>
-    <p class="docs-description">This is a component page.</p>
+    <p class="docs-description lead">This is a component page.</p>
 
   
 
@@ -38,21 +38,21 @@
       <tr>
         <td class="name"><code>$var-basic</code></td>
         <td>Number</td>
-        <td class="number"><code>true</code></td>
+        <td class="zf-docs-type-number"><code>true</code></td>
         <td><p>This is a basic variable.</p>
 </td>
       </tr>
       <tr>
         <td class="name"><code>$var-multi</code></td>
         <td>Number or  List</td>
-        <td class="number | list"><code>10px</code></td>
+        <td class="zf-docs-type-number | list"><code>10px</code></td>
         <td><p>This is a variable with multiple types.</p>
 </td>
       </tr>
       <tr>
         <td class="name"><code>$var-map</code></td>
         <td>Map</td>
-        <td class="map"><code>
+        <td class="zf-docs-type-map"><code>
   one: true<br>
   two: false<br>
 </code></td>
@@ -62,7 +62,7 @@
       <tr>
         <td class="name"><code>$var-since</code></td>
         <td>Number</td>
-        <td class="number"><code>10px</code></td>
+        <td class="zf-docs-type-number"><code>10px</code></td>
         <td><p>This is a variable with a changelog.</p>
 </td>
       </tr>
@@ -84,7 +84,7 @@
 
 
       <div class="docs-code">
-        <pre><code>@<span class="hljs-keyword">include</span> mixin-basic(<span class="hljs-variable">$param1</span>, <span class="hljs-variable">$param2</span>, <span class="hljs-variable">$param3</span>) { }</code></pre>
+        <pre><code><span class="hljs-keyword">@include</span> mixin-basic(<span class="hljs-variable">$param1</span>, <span class="hljs-variable">$param2</span>, <span class="hljs-variable">$param3</span>) { }</code></pre>
       </div>
 
       <p>This is a mixin.</p>
@@ -133,7 +133,7 @@
         <p class="docs-notice-deprecated">Deprecated in This mixin was replaced by `mixin-basic()` in version 6.2, and will be removed in 6.2.</p>
 
       <div class="docs-code">
-        <pre><code>@<span class="hljs-keyword">include</span> mixin-deprecated;</code></pre>
+        <pre><code><span class="hljs-keyword">@include</span> mixin-deprecated;</code></pre>
       </div>
 
       <p>This is a deprecated mixin.</p>
@@ -194,20 +194,26 @@
 <section>
   <h2 id="javascript-reference" class="docs-heading" data-magellan-target="javascript-reference">JavaScript Reference<a class="docs-heading-icon" href="#javascript-reference"></a></h2>
 
-  
   <section>
     <h3 id="js-module" class="docs-heading">Initializing<a class="docs-heading-icon" href="#js-module"></a></h3>
 
-    <p>The file <code>component.js</code> must be included in your JavaScript to use this plugin, along with <code>foundation.core.js</code>. <strong>This plugin also requires these utility libraries:</strong></p>
+    <p>
+      The following files must be included in your JavaScript to use this plugin:
+      <ul>
+        <li><code>foundation.core.js</code></li>
 
-    
-    <ul>
-      <li><code>foundation.core.js</code></li>
-    </ul>
-    
+        <li>
+          <code>component.js</code>
+
+          <ul>
+            <li>With utility library <code>foundation.core.js</code></li>
+          </ul>
+
+        </li>
+      </ul>
+    </p>
 
   </section>
-  
 
   <section>
     <h3 id="js-class" class="docs-heading">Foundation.Plugin<a class="docs-heading-icon" href="#js-class"></a></h3>
@@ -263,7 +269,7 @@
         <tr><th>Name</th><th>Description</th></tr>
       </thead>
         <tr>
-          <td><code>plugin.zf.component</code></td>
+          <td><code>plugin.zf.init.zf</code></td>
           <td>Fires if the target element has the class after a toggle.</td>
         </tr>
     </table>
@@ -333,7 +339,7 @@
 <!-- <section class="docs-building-blocks">
   <h2 id="building-blocks" class="docs-heading" data-magellan-target="building-blocks">Building Blocks<a class="docs-heading-icon" href="#building-blocks"></a></h2>
 
-  <p><a href="http://zurb.com/building-blocks">Building Blocks</a> is a ZURB-curated resource with useful code snippets that use Foundation components. Here are a few for this component:</p>
+  <p><a href="https://get.foundation/building-blocks/">Building Blocks</a> is a ZURB-curated resource with useful code snippets that use Foundation components. Here are a few for this component:</p>
 
   <div class="warning callout">
     <p>These are placeholder items. If you have ideas for building blocks for this component, <a href="https://github.com/foundation/foundation-sites-6/issues/118">we're taking ideas on GitHub</a>.</p>
@@ -347,17 +353,18 @@
 <div class="large-3 columns show-for-medium">
 <nav class="docs-toc-wrap" id="docsToc" data-sticky-container>
   <div class="docs-toc hide" id="docsTOC" data-sticky data-margin-top="6" data-anchor="docs">
-    <ul class="vertical menu" data-docs-toc>
+    <ul class="vertical menu" data-docs-toc data-magellan data-offset="130">
       <li class="docs-nav-title">Component</li>
     </ul>
 
     <hr class="docs-toc-divider small">
 
     <ul class="docs-contribute-menu">
-      <li><a href="https://github.com/zurb//edit//test/fixtures/component.md" target="_blank"><i class="fi-pencil"></i>Edit this Page</a></li>
-      <li><a href="https://github.com/zurb/undefined/issues/new?title=%5BComponent%5D%20ISSUE%20NAME%20HERE" target="_blank"><i class="fi-social-github"></i>Report a Bug</a></li>
-        <li><a href="http://foundation.zurb.com/forum?search=Component" target="_blank"><i class="fi-comment"></i>Get Help</a></li>
+      <li><a href="https://github.com/foundation//edit//test/fixtures/component.md" target="_blank"><i class="fi-pencil"></i>Edit this Page</a></li>
+      <li><a href="https://github.com/foundation/undefined/issues/new?title=%5BComponent%5D%20ISSUE%20NAME%20HERE" target="_blank"><i class="fi-social-github"></i>Report a Bug</a></li>
+      <li><a href="https://foundation.discourse.group" target="_blank"><i class="fi-comment"></i>Get Help</a></li>
     </ul>
+    <div class="foundation-toc-ad-unit" id="TOCAdUnit"></div>
   </div>
 
 </nav>

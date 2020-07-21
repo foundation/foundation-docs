@@ -5,23 +5,23 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test:unit",
-    "test:unit": "mocha test/unit/*.js --compilers js:@babel/register",
+    "test:unit": "mocha test/unit/*.js --require @babel/register",
     "test:visual": "gulp"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zurb/foundation-docs.git"
+    "url": "git+https://github.com/foundation/foundation-docs.git"
   },
   "keywords": [
     "foundation",
     "docs"
   ],
-  "author": "ZURB <foundation@zurb.com> (http://foundation.zurb.com)",
+  "author": "Foundation <contact@get.foundation> (https://get.foundation)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zurb/foundation-docs/issues"
+    "url": "https://github.com/foundation/foundation-docs/issues"
   },
-  "homepage": "https://github.com/zurb/foundation-docs#readme",
+  "homepage": "https://github.com/foundation/foundation-docs#readme",
   "engines": {
     "node": ">=6.4.0",
     "npm": ">=2.14.2"
@@ -30,12 +30,12 @@
     "cheerio": "^1.0.0-rc.2",
     "handlebars": "^4.5.3",
     "highlight.js": "^9.16.2",
-    "inky": "^1.2.6",
+    "inky": "foundation/inky#develop",
     "js-beautify": "^1.6.2",
     "kebab-case": "^1.0.0",
     "lodash": "^4.17.15",
     "lodash.template": "^4.5.0",
-    "marked": "^0.6.1",
+    "marked": "^1.1.1",
     "mkdirp": "^0.5.1",
     "multiline": "^1.0.2",
     "querystring": "^0.2.0",
@@ -44,24 +44,27 @@
     "strip-indent": "^2.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
-    "@babel/register": "^7.0.0",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/register": "^7.10.5",
     "autoprefixer": "^9.1.5",
     "browser-sync": "^2.11.1",
     "chai": "^4.1.2",
-    "foundation-sites": "^6.2.0",
+    "foundation-sites": "^6.6.3",
     "gulp": "^4.0.0",
     "gulp-concat": "^2.6.0",
     "gulp-load-plugins": "^1.2.0",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.1",
-    "mocha": "^5.2.0",
+    "mocha": "^8.0.1",
     "motion-ui": "^2.0.3",
     "node-sass": "^4.9.3",
-    "panini": "^1.2.0",
+    "panini": "foundation/panini#develop",
     "rimraf": "^2.5.2",
     "striptags": "^3.1.1",
-    "supercollider": "^1.4.5"
+    "supercollider": "foundation/supercollider#develop"
+  },
+  "resolutions": {
+    "marked": "^1.1.1"
   }
 }
