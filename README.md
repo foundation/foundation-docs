@@ -1,12 +1,11 @@
 # Foundation Docs
 
-[![Build Status](https://travis-ci.org/zurb/foundation-docs.svg?branch=master)](https://travis-ci.org/zurb/foundation-docs)
+[![Build Status](https://travis-ci.org/foundation/foundation-docs.svg?branch=master)](https://travis-ci.org/foundation/foundation-docs)
 
-This is a set of HTML templates and JavaScript utilities shared by the documentation pages for the [Foundation](http://foundation.zurb.com) family of frameworks, including:
+This is a set of HTML templates and JavaScript utilities shared by the documentation pages for the [Foundation](https://get.foundation) family of frameworks, including:
 
-- [Foundation for Sites](http://foundation.zurb.com/sites)
-- [Foundation for Apps](http://foundation.zurb.com/apps)
-- [Foundation for Emails](http://foundation.zurb.com/emails)
+- [Foundation for Sites](https://get.foundation/sites)
+- [Foundation for Emails](https://get.foundation/emails)
 
 ## Table of Contents
 
@@ -22,7 +21,7 @@ This codebase isn't on npm, but this Git repository can be referenced in a `pack
 ```bash
 {
   "dependencies": {
-    "foundation-docs": "zurb/foundation-docs"
+    "foundation-docs": "foundation/foundation-docs"
   }
 }
 ```
