@@ -3680,9 +3680,10 @@ ini@^1.3.4, ini@~1.3.0:
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
   integrity sha512-RZY5huIKCMRWDUqZlEi72f/lmXKMvuszcMBduliQ3nnWbx9X/ZBQO7DijMEYS9EhHBb2qacRUMtC7svLwe0lcw==
 
-inky@foundation/inky#master:
+inky@^1.4.1:
   version "1.4.1"
-  resolved "https://codeload.github.com/foundation/inky/tar.gz/25342d6a221195f0ee69acfd232fa7fd15747280"
+  resolved "https://registry.yarnpkg.com/inky/-/inky-1.4.1.tgz#699deaef3fd76e68fd2069025a6a7ed37e4ee299"
+  integrity sha512-BRcj11XRpjX3/m9UL7eUK3/3fXlwYvw8UwIkyPrEu7t6b8T3zDqNWb0/lPBEtoMEsrjBJTzNlrP12PTUz67s7g==
   dependencies:
     cheerio "^0.20.0"
     foundation-emails "^2.2.0"
@@ -5295,9 +5296,10 @@ package-json@^4.0.0:
     registry-url "^3.0.3"
     semver "^5.1.0"
 
-panini@foundation/panini#master:
-  version "1.7.0"
-  resolved "https://codeload.github.com/foundation/panini/tar.gz/f31eb07a309a3aa1206de57be71c26b3b64ad30b"
+panini@^1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/panini/-/panini-1.7.1.tgz#1fb7c5ff24e64aec70f313606118e7cda5bfe1cf"
+  integrity sha512-iAzKEN69Tt/9nhA46SeTJWHEUOISQB0RoCf2h5Ts1jXZ2bz9UCi6o9EIPuZKR3QZQkTzxk5zqPtNbeEJMcruUg==
   dependencies:
     deepmerge "^1.5.2"
     front-matter "^2.0.5"
@@ -6723,9 +6725,10 @@ striptags@^3.1.1:
   resolved "https://registry.yarnpkg.com/striptags/-/striptags-3.1.1.tgz#c8c3e7fdd6fb4bb3a32a3b752e5b5e3e38093ebd"
   integrity sha1-yMPn/db7S7OjKjt1LltePjgJPr0=
 
-supercollider@foundation/supercollider#master:
-  version "1.5.0"
-  resolved "https://codeload.github.com/foundation/supercollider/tar.gz/c99f3bc8e689295899bf8c6fd80b2f64a5bdb782"
+supercollider@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/supercollider/-/supercollider-1.5.2.tgz#cf4d408784f0cd52414e3edb9b376d8bda239232"
+  integrity sha512-SRsv8dMTYSEEIPJAAmXMmPN1yC86pjqsHmAYh2jfNhIs1tTQO0BL+aow0x8f7bOjUGSdoeg8NbUIXCRINXSwQg==
   dependencies:
     async "^0.9.0"
     chalk "^1.1.1"
