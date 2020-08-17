@@ -15,25 +15,20 @@ $('[data-docs-code]').each(function(index, value) {
 
   $(this).prepend($button);
 
-  var clipboard = new ClipboardJS('#' + copyBtnId, {
-    text: function() {
-        return text;
-    }
-  });
-
-  // Change the text of the copy button when it's clicked on
-  clipboard.on('success', function(event) {
-    $button.text('Copied!');
-    window.setTimeout(function() {
-      $button.text('Copy');
-    }, 3000);
-  });
-
-  // Log errors on copy failure
-  clipboard.on('error', function(event) {
+  $(document).on('click', '#' + copyBtnId, function() {
+    navigator.clipboard.writeText(text).then(function() {
+      // Change the text of the copy button when it's clicked on
+      $button.text('Copied!');
+      window.setTimeout(function() {
+        $button.text('Copy');
+      }, 3000);
+    }, function() {
+      // Log errors on copy failure
       console.error('Action:', event.action);
       console.error('Trigger:', event.trigger);
+    });
   });
+
 });
 
 }();
