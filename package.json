@@ -1,6 +1,6 @@
 {
   "name": "foundation-docs",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Common templates and utilities for the Foundation family documentation.",
   "main": "index.js",
   "scripts": {
