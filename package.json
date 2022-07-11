@@ -58,7 +58,7 @@
     "gulp-sass": "^4.0.1",
     "mocha": "^8.0.1",
     "motion-ui": "^2.0.3",
-    "node-sass": "^6.0.1",
+    "node-sass": "^7.0.0",
     "panini": "^1.7.2",
     "rimraf": "^2.5.2",
     "striptags": "^3.1.1",
