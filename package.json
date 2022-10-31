@@ -32,7 +32,7 @@
     "highlight.js": "^9.16.2",
     "inky": "^1.4.1",
     "js-beautify": "^1.14.4",
-    "kebab-case": "^1.0.0",
+    "kebab-case": "^1.0.2",
     "lodash": "^4.17.15",
     "lodash.template": "^4.5.0",
     "marked": "^2",
