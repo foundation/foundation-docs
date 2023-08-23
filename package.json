@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
-    "handlebars": "^4.5.3",
+    "handlebars": "^4.7.8",
     "highlight.js": "^9.16.2",
     "inky": "^1.4.1",
     "js-beautify": "^1.14.4",
