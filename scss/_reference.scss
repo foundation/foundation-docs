@@ -1,10 +1,6 @@
 // Styles for the Sass and JavaScript reference sections.
 
 .docs-variable-table {
-  @include breakpoint(medium down) {
-    @include table-stack;
-  }
-  
   width: 100%;
   border: 0;
 
@@ -22,7 +18,7 @@
   tbody {
     border: 0;
   }
-  
+
   // Reset code styles to look like plain text
   code {
     background: transparent;
@@ -62,5 +58,9 @@
 
   tbody tr:nth-of-type(even):hover {
     background: $light-gray;
+  }
+
+  @include breakpoint(medium down) {
+    @include table-stack;
   }
 }

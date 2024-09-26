@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // Index used on the... index page.
 
 .docs-big-index {
@@ -14,7 +16,7 @@
     color: $primary-color;
 
     strong {
-      color: lighten($primary-color, 10%);
+      color: color.adjust($primary-color, $lightness: 10%)
     }
   }
 }

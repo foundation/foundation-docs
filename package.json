@@ -1,6 +1,6 @@
 {
   "name": "foundation-docs",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Common templates and utilities for the Foundation family documentation.",
   "main": "index.js",
   "scripts": {
@@ -31,12 +31,12 @@
     "handlebars": "^4.5.3",
     "highlight.js": "^9.16.2",
     "inky": "^1.4.1",
-    "js-beautify": "^1.11.0",
+    "js-beautify": "^1.14.4",
     "kebab-case": "^1.0.0",
     "lodash": "^4.17.15",
     "lodash.template": "^4.5.0",
     "marked": "^2",
-    "mkdirp": "^0.5.1",
+    "mkdirp": "^0.5.6",
     "multiline": "^1.0.2",
     "querystring": "^0.2.0",
     "require-dir": "^1.0.0",
@@ -55,19 +55,18 @@
     "gulp-concat": "^2.6.0",
     "gulp-load-plugins": "^1.2.0",
     "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.0.1",
+    "gulp-sass": "^5.1.0",
     "mocha": "^8.0.1",
     "motion-ui": "^2.0.3",
-    "node-sass": "^7.0.0",
     "panini": "^1.7.2",
     "rimraf": "^2.5.2",
+    "sass-embedded": "^1.79.3",
     "striptags": "^3.1.1",
     "supercollider": "^1.5.3"
   },
   "resolutions": {
     "glob-parent": "^5.1.2",
     "yargs-parser": "^20.2.4",
-    "marked": "^2",
-    "node-sass": "^6.0.1"
+    "marked": "^2"
   }
 }
