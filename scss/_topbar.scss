@@ -1,7 +1,8 @@
-// [TODO] Make class names more docs-specific
+@use "sass:color";
 
-$topbar-background: #121212;
-$topbar-hover-color: darken($topbar-background, 20%);
+$topbar-background  : #121212;
+$topbar-dark-color  : color.adjust($topbar-background, $lightness: -20%);
+$topbar-light-color : color.adjust($topbar-background, $lightness: 10%);
 
 .marketing-topbar {
   background: $topbar-background;
@@ -34,7 +35,7 @@ $topbar-hover-color: darken($topbar-background, 20%);
 
     &:hover:not(.button),
     &:focus {
-      background: darken($topbar-background, 20%);
+      background: $topbar-dark-color;
     }
 
     &.button {
@@ -48,11 +49,11 @@ $topbar-hover-color: darken($topbar-background, 20%);
     padding: 10px;
     padding-left: 15px;
     font-size: 0.8em;
-    background: lighten($topbar-background, 10%);
+    background: $topbar-light-color;
   }
 
   .is-active a {
-    background: darken($topbar-background, 20%);
+    background: $topbar-dark-color;
   }
 
   // ZURB logo
@@ -103,7 +104,7 @@ $topbar-hover-color: darken($topbar-background, 20%);
 
     &:hover:not(.button),
     &:focus {
-      background: darken($topbar-background, 20%);
+      background: $topbar-dark-color;
     }
 
     &.button {
@@ -117,7 +118,7 @@ $topbar-hover-color: darken($topbar-background, 20%);
     padding: 10px;
     padding-left: 15px;
     font-size: 0.8em;
-    background: lighten($topbar-background, 10%);
+    background: $topbar-light-color;
   }
 }
 
