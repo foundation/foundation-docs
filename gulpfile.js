@@ -1,10 +1,11 @@
-var $ = require('gulp-load-plugins')();
-var browser = require('browser-sync');
-var docs = require('./index');
-var gulp = require('gulp');
-var panini = require('panini');
-var supercollider = require('supercollider');
-var autoprefixer = require('autoprefixer');
+const gulp = require('gulp');
+const $ = require('gulp-load-plugins')();
+const browser = require('browser-sync').create();
+const docs = require('./index');
+const panini = require('panini');
+const sass = require('gulp-sass')(require('sass-embedded'));
+const supercollider = require('supercollider');
+const autoprefixer = require('autoprefixer');
 
 // Supercollider configuration
 supercollider
@@ -15,10 +16,10 @@ supercollider
   })
   .searchConfig({})
   .adapter('sass')
-  .adapter('js')
+  .adapter('js');
 
 // Generates a documentation page
-gulp.task('pages', function(done) {
+function pages(done) {
   panini.refresh();
 
   return gulp.src('test/fixtures/*.md')
@@ -33,46 +34,54 @@ gulp.task('pages', function(done) {
       browser.reload();
       supercollider.buildSearch('test/visual/_build/data/search.json', done);
     });
-});
+}
 
 // Compiles documentation CSS
-gulp.task('sass', function() {
+function compileSass() {
   return gulp.src('test/visual/docs.scss')
-    .pipe($.sass({
+    .pipe(sass({
       includePaths: [
         'scss',
         'node_modules/foundation-sites/scss',
         'node_modules/motion-ui/src'
       ]
-    }).on('error', $.sass.logError))
+    }).on('error', sass.logError))
     .pipe($.postcss([
       autoprefixer() // uses ".browserslistrc"
     ]))
     .pipe(gulp.dest('test/visual/_build'))
     .pipe(browser.reload({ stream: true }));
-});
+}
 
-gulp.task('javascript', function() {
+function javascript() {
   return gulp.src('js/**/*.js')
     .pipe($.concat('docs.js'))
     .pipe(gulp.dest('test/visual/_build'));
-});
+}
 
 // Build everything
-gulp.task('build', gulp.parallel('pages', 'sass', 'javascript'));
+const build = gulp.parallel(pages, compileSass, javascript);
 
 // Create a server for visual tests
-gulp.task('serve', function (done) {
+function serve(done) {
   browser.init({ server: 'test/visual/_build' });
   done();
-});
+}
 
 // Watch for changes and re-trigger the build
-gulp.task('watch', function() {
-  gulp.watch(['text/fixtures/**/*', 'test/visual/**/*.html'], gulp.series('pages'));
-  gulp.watch(['scss/**/*', 'test/visual/docs.scss'], gulp.series('sass'));
-  gulp.watch(['js/**/*'], gulp.series('javascript'));
-});
+function watch() {
+  gulp.watch(['test/fixtures/**/*', 'test/visual/**/*.html'], gulp.series(pages));
+  gulp.watch(['scss/**/*', 'test/visual/docs.scss'], gulp.series(compileSass));
+  gulp.watch(['js/**/*'], gulp.series(javascript));
+}
 
 // Creates a server and watches for file changes
-gulp.task('default', gulp.series('build', 'serve', 'watch'));
+const defaultTask = gulp.series(build, serve, watch);
+
+exports.pages = pages;
+exports.sass = compileSass;
+exports.javascript = javascript;
+exports.build = build;
+exports.serve = serve;
+exports.watch = watch;
+exports.default = defaultTask;
