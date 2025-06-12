@@ -27,7 +27,7 @@
     "npm": ">=2.14.2"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2",
+    "cheerio": "^1.1.0",
     "handlebars": "^4.5.3",
     "highlight.js": "^9.16.2",
     "inky": "^1.4.1",
